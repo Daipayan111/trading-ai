@@ -1,0 +1,542 @@
+[
+  {
+    "symbol": "NIFTY50",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 25,
+    "tp1_pct": 100.0,
+    "sl_pct": 0.0,
+    "gor_pt": 132.33
+  },
+  {
+    "symbol": "NIFTY50",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 177,
+    "tp1_pct": 84.7,
+    "sl_pct": 15.3,
+    "gor_pt": 27.58
+  },
+  {
+    "symbol": "NIFTY50",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 18,
+    "tp1_pct": 83.3,
+    "sl_pct": 16.7,
+    "gor_pt": 5.78
+  },
+  {
+    "symbol": "NIFTY50",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 51,
+    "tp1_pct": 80.4,
+    "sl_pct": 19.6,
+    "gor_pt": 1.42
+  },
+  {
+    "symbol": "BANKNIFTY",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 25,
+    "tp1_pct": 92.0,
+    "sl_pct": 8.0,
+    "gor_pt": 244.65
+  },
+  {
+    "symbol": "BANKNIFTY",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 170,
+    "tp1_pct": 82.4,
+    "sl_pct": 17.6,
+    "gor_pt": 38.89
+  },
+  {
+    "symbol": "BANKNIFTY",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 16,
+    "tp1_pct": 87.5,
+    "sl_pct": 12.5,
+    "gor_pt": 39.35
+  },
+  {
+    "symbol": "BANKNIFTY",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 36,
+    "tp1_pct": 80.6,
+    "sl_pct": 19.4,
+    "gor_pt": 20.45
+  },
+  {
+    "symbol": "RELIANCE",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 26,
+    "tp1_pct": 73.1,
+    "sl_pct": 26.9,
+    "gor_pt": -5.61
+  },
+  {
+    "symbol": "RELIANCE",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 171,
+    "tp1_pct": 81.3,
+    "sl_pct": 18.7,
+    "gor_pt": 1.46
+  },
+  {
+    "symbol": "RELIANCE",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 11,
+    "tp1_pct": 90.9,
+    "sl_pct": 9.1,
+    "gor_pt": 1.95
+  },
+  {
+    "symbol": "RELIANCE",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 48,
+    "tp1_pct": 85.4,
+    "sl_pct": 14.6,
+    "gor_pt": 0.52
+  },
+  {
+    "symbol": "TCS",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 25,
+    "tp1_pct": 80.0,
+    "sl_pct": 20.0,
+    "gor_pt": -1.45
+  },
+  {
+    "symbol": "TCS",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 154,
+    "tp1_pct": 81.8,
+    "sl_pct": 18.2,
+    "gor_pt": 2.37
+  },
+  {
+    "symbol": "TCS",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 16,
+    "tp1_pct": 93.8,
+    "sl_pct": 6.2,
+    "gor_pt": 5.8
+  },
+  {
+    "symbol": "TCS",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 39,
+    "tp1_pct": 89.7,
+    "sl_pct": 10.3,
+    "gor_pt": 2.42
+  },
+  {
+    "symbol": "INFY",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 18,
+    "tp1_pct": 88.9,
+    "sl_pct": 11.1,
+    "gor_pt": 13.63
+  },
+  {
+    "symbol": "INFY",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 179,
+    "tp1_pct": 84.4,
+    "sl_pct": 15.6,
+    "gor_pt": 2.63
+  },
+  {
+    "symbol": "INFY",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 13,
+    "tp1_pct": 84.6,
+    "sl_pct": 15.4,
+    "gor_pt": 2.46
+  },
+  {
+    "symbol": "INFY",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 38,
+    "tp1_pct": 78.9,
+    "sl_pct": 21.1,
+    "gor_pt": 0.16
+  },
+  {
+    "symbol": "HDFCBANK",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 21,
+    "tp1_pct": 85.7,
+    "sl_pct": 14.3,
+    "gor_pt": 7.54
+  },
+  {
+    "symbol": "HDFCBANK",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 173,
+    "tp1_pct": 87.9,
+    "sl_pct": 12.1,
+    "gor_pt": 1.45
+  },
+  {
+    "symbol": "HDFCBANK",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 16,
+    "tp1_pct": 81.2,
+    "sl_pct": 18.8,
+    "gor_pt": -0.16
+  },
+  {
+    "symbol": "HDFCBANK",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 39,
+    "tp1_pct": 74.4,
+    "sl_pct": 25.6,
+    "gor_pt": -0.08
+  },
+  {
+    "symbol": "ICICIBANK",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 22,
+    "tp1_pct": 86.4,
+    "sl_pct": 13.6,
+    "gor_pt": 1.97
+  },
+  {
+    "symbol": "ICICIBANK",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 183,
+    "tp1_pct": 83.1,
+    "sl_pct": 16.9,
+    "gor_pt": 1.82
+  },
+  {
+    "symbol": "ICICIBANK",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 7,
+    "tp1_pct": 71.4,
+    "sl_pct": 28.6,
+    "gor_pt": -0.27
+  },
+  {
+    "symbol": "ICICIBANK",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 35,
+    "tp1_pct": 94.3,
+    "sl_pct": 5.7,
+    "gor_pt": 0.97
+  },
+  {
+    "symbol": "SBIN",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 34,
+    "tp1_pct": 94.1,
+    "sl_pct": 5.9,
+    "gor_pt": 7.26
+  },
+  {
+    "symbol": "SBIN",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 191,
+    "tp1_pct": 88.0,
+    "sl_pct": 12.0,
+    "gor_pt": 2.34
+  },
+  {
+    "symbol": "SBIN",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 15,
+    "tp1_pct": 93.3,
+    "sl_pct": 6.7,
+    "gor_pt": 2.63
+  },
+  {
+    "symbol": "SBIN",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 50,
+    "tp1_pct": 82.0,
+    "sl_pct": 18.0,
+    "gor_pt": -0.06
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 28,
+    "tp1_pct": 89.3,
+    "sl_pct": 10.7,
+    "gor_pt": 6.68
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 207,
+    "tp1_pct": 82.6,
+    "sl_pct": 17.4,
+    "gor_pt": 2.49
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 15,
+    "tp1_pct": 86.7,
+    "sl_pct": 13.3,
+    "gor_pt": 1.07
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 35,
+    "tp1_pct": 82.9,
+    "sl_pct": 17.1,
+    "gor_pt": 0.67
+  },
+  {
+    "symbol": "ITC",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 26,
+    "tp1_pct": 92.3,
+    "sl_pct": 7.7,
+    "gor_pt": 3.52
+  },
+  {
+    "symbol": "ITC",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 147,
+    "tp1_pct": 81.6,
+    "sl_pct": 18.4,
+    "gor_pt": -0.0
+  },
+  {
+    "symbol": "ITC",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 18,
+    "tp1_pct": 94.4,
+    "sl_pct": 5.6,
+    "gor_pt": 0.44
+  },
+  {
+    "symbol": "ITC",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 48,
+    "tp1_pct": 83.3,
+    "sl_pct": 16.7,
+    "gor_pt": -0.02
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 23,
+    "tp1_pct": 95.7,
+    "sl_pct": 4.3,
+    "gor_pt": 4.72
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 163,
+    "tp1_pct": 85.3,
+    "sl_pct": 14.7,
+    "gor_pt": 0.84
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 10,
+    "tp1_pct": 90.0,
+    "sl_pct": 10.0,
+    "gor_pt": 1.0
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 42,
+    "tp1_pct": 71.4,
+    "sl_pct": 28.6,
+    "gor_pt": 0.13
+  },
+  {
+    "symbol": "LT",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 30,
+    "tp1_pct": 100.0,
+    "sl_pct": 0.0,
+    "gor_pt": 29.65
+  },
+  {
+    "symbol": "LT",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 179,
+    "tp1_pct": 80.4,
+    "sl_pct": 19.6,
+    "gor_pt": 3.45
+  },
+  {
+    "symbol": "LT",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 13,
+    "tp1_pct": 76.9,
+    "sl_pct": 23.1,
+    "gor_pt": -0.09
+  },
+  {
+    "symbol": "LT",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 32,
+    "tp1_pct": 87.5,
+    "sl_pct": 12.5,
+    "gor_pt": 2.06
+  },
+  {
+    "symbol": "AXISBANK",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 21,
+    "tp1_pct": 100.0,
+    "sl_pct": 0.0,
+    "gor_pt": 16.43
+  },
+  {
+    "symbol": "AXISBANK",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 168,
+    "tp1_pct": 86.9,
+    "sl_pct": 13.1,
+    "gor_pt": 2.48
+  },
+  {
+    "symbol": "AXISBANK",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 13,
+    "tp1_pct": 92.3,
+    "sl_pct": 7.7,
+    "gor_pt": 1.08
+  },
+  {
+    "symbol": "AXISBANK",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 52,
+    "tp1_pct": 92.3,
+    "sl_pct": 7.7,
+    "gor_pt": 1.0
+  },
+  {
+    "symbol": "MARUTI",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 29,
+    "tp1_pct": 93.1,
+    "sl_pct": 6.9,
+    "gor_pt": 158.98
+  },
+  {
+    "symbol": "MARUTI",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 177,
+    "tp1_pct": 87.0,
+    "sl_pct": 13.0,
+    "gor_pt": 31.39
+  },
+  {
+    "symbol": "MARUTI",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 11,
+    "tp1_pct": 90.9,
+    "sl_pct": 9.1,
+    "gor_pt": 8.61
+  },
+  {
+    "symbol": "MARUTI",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 36,
+    "tp1_pct": 91.7,
+    "sl_pct": 8.3,
+    "gor_pt": 13.31
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "timeframe": "1d",
+    "tf_name": "Daily",
+    "trades": 31,
+    "tp1_pct": 87.1,
+    "sl_pct": 12.9,
+    "gor_pt": 4.35
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "timeframe": "1h",
+    "tf_name": "1-Hour",
+    "trades": 169,
+    "tp1_pct": 84.6,
+    "sl_pct": 15.4,
+    "gor_pt": 5.16
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "timeframe": "15m",
+    "tf_name": "15-Min",
+    "trades": 11,
+    "tp1_pct": 100.0,
+    "sl_pct": 0.0,
+    "gor_pt": 3.47
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "timeframe": "5m",
+    "tf_name": "5-Min",
+    "trades": 35,
+    "tp1_pct": 77.1,
+    "sl_pct": 22.9,
+    "gor_pt": -0.29
+  }
+]

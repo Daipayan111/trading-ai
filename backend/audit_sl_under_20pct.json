@@ -1,0 +1,82 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "trades": 18,
+    "tp1_win_rate": 94.4,
+    "tp2_rate": 22.2,
+    "sl_rate": 5.6,
+    "avg_hold_mins": 17.8
+  },
+  {
+    "symbol": "TCS",
+    "trades": 16,
+    "tp1_win_rate": 75.0,
+    "tp2_rate": 12.5,
+    "sl_rate": 25.0,
+    "avg_hold_mins": 30.6
+  },
+  {
+    "symbol": "INFY",
+    "trades": 17,
+    "tp1_win_rate": 64.7,
+    "tp2_rate": 17.6,
+    "sl_rate": 35.3,
+    "avg_hold_mins": 24.1
+  },
+  {
+    "symbol": "HDFCBANK",
+    "trades": 6,
+    "tp1_win_rate": 100.0,
+    "tp2_rate": 33.3,
+    "sl_rate": 0.0,
+    "avg_hold_mins": 7.5
+  },
+  {
+    "symbol": "ICICIBANK",
+    "trades": 18,
+    "tp1_win_rate": 88.9,
+    "tp2_rate": 11.1,
+    "sl_rate": 11.1,
+    "avg_hold_mins": 17.8
+  },
+  {
+    "symbol": "SBIN",
+    "trades": 23,
+    "tp1_win_rate": 73.9,
+    "tp2_rate": 26.1,
+    "sl_rate": 26.1,
+    "avg_hold_mins": 13.9
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "trades": 24,
+    "tp1_win_rate": 62.5,
+    "tp2_rate": 12.5,
+    "sl_rate": 37.5,
+    "avg_hold_mins": 19.6
+  },
+  {
+    "symbol": "LT",
+    "trades": 29,
+    "tp1_win_rate": 89.7,
+    "tp2_rate": 24.1,
+    "sl_rate": 10.3,
+    "avg_hold_mins": 10.0
+  },
+  {
+    "symbol": "MARUTI",
+    "trades": 27,
+    "tp1_win_rate": 88.9,
+    "tp2_rate": 33.3,
+    "sl_rate": 11.1,
+    "avg_hold_mins": 15.4
+  },
+  {
+    "symbol": "ITC",
+    "trades": 22,
+    "tp1_win_rate": 90.9,
+    "tp2_rate": 18.2,
+    "sl_rate": 9.1,
+    "avg_hold_mins": 12.5
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "symbol": "CRUDEOIL",
+    "interval": "5m",
+    "baseline": {
+      "symbol": "CRUDEOIL",
+      "name": "Crude Oil",
+      "interval": "5m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 812,
+      "win_rate_pct": 47.3,
+      "total_inr": 283596.51,
+      "profit_factor": 1.34,
+      "sl_trap_pct": 63.8,
+      "avg_post_tp_run_atr": 1.73
+    },
+    "upgraded": {
+      "symbol": "CRUDEOIL",
+      "name": "Crude Oil",
+      "interval": "5m",
+      "model": "AI_UPGRADED",
+      "total_trades": 590,
+      "win_rate_pct": 57.1,
+      "total_inr": 140195.07,
+      "profit_factor": 1.18,
+      "sl_trap_pct": 45.7,
+      "avg_post_tp_run_atr": 1.96
+    }
+  },
+  {
+    "symbol": "CRUDEOIL",
+    "interval": "1m",
+    "baseline": {
+      "symbol": "CRUDEOIL",
+      "name": "Crude Oil",
+      "interval": "1m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 487,
+      "win_rate_pct": 47.8,
+      "total_inr": 70267.23,
+      "profit_factor": 1.44,
+      "sl_trap_pct": 63.7,
+      "avg_post_tp_run_atr": 1.8
+    },
+    "upgraded": {
+      "symbol": "CRUDEOIL",
+      "name": "Crude Oil",
+      "interval": "1m",
+      "model": "AI_UPGRADED",
+      "total_trades": 380,
+      "win_rate_pct": 56.8,
+      "total_inr": 47619.16,
+      "profit_factor": 1.3,
+      "sl_trap_pct": 50.0,
+      "avg_post_tp_run_atr": 1.77
+    }
+  },
+  {
+    "symbol": "GOLD",
+    "interval": "5m",
+    "baseline": {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "interval": "5m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 848,
+      "win_rate_pct": 42.6,
+      "total_inr": 6677.16,
+      "profit_factor": 1.1,
+      "sl_trap_pct": 57.1,
+      "avg_post_tp_run_atr": 1.58
+    },
+    "upgraded": {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "interval": "5m",
+      "model": "AI_UPGRADED",
+      "total_trades": 614,
+      "win_rate_pct": 52.8,
+      "total_inr": -2736.52,
+      "profit_factor": 0.96,
+      "sl_trap_pct": 41.1,
+      "avg_post_tp_run_atr": 1.81
+    }
+  },
+  {
+    "symbol": "GOLD",
+    "interval": "1m",
+    "baseline": {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "interval": "1m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 485,
+      "win_rate_pct": 39.0,
+      "total_inr": 513.26,
+      "profit_factor": 1.03,
+      "sl_trap_pct": 61.5,
+      "avg_post_tp_run_atr": 1.49
+    },
+    "upgraded": {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "interval": "1m",
+      "model": "AI_UPGRADED",
+      "total_trades": 370,
+      "win_rate_pct": 53.8,
+      "total_inr": 2474.13,
+      "profit_factor": 1.17,
+      "sl_trap_pct": 42.6,
+      "avg_post_tp_run_atr": 1.72
+    }
+  },
+  {
+    "symbol": "SILVER",
+    "interval": "5m",
+    "baseline": {
+      "symbol": "SILVER",
+      "name": "Silver",
+      "interval": "5m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 909,
+      "win_rate_pct": 42.1,
+      "total_inr": 351848.43,
+      "profit_factor": 1.06,
+      "sl_trap_pct": 62.0,
+      "avg_post_tp_run_atr": 1.83
+    },
+    "upgraded": {
+      "symbol": "SILVER",
+      "name": "Silver",
+      "interval": "5m",
+      "model": "AI_UPGRADED",
+      "total_trades": 633,
+      "win_rate_pct": 52.6,
+      "total_inr": 616657.51,
+      "profit_factor": 1.12,
+      "sl_trap_pct": 45.5,
+      "avg_post_tp_run_atr": 1.95
+    }
+  },
+  {
+    "symbol": "SILVER",
+    "interval": "1m",
+    "baseline": {
+      "symbol": "SILVER",
+      "name": "Silver",
+      "interval": "1m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 476,
+      "win_rate_pct": 41.2,
+      "total_inr": 185094.03,
+      "profit_factor": 1.17,
+      "sl_trap_pct": 50.7,
+      "avg_post_tp_run_atr": 1.72
+    },
+    "upgraded": {
+      "symbol": "SILVER",
+      "name": "Silver",
+      "interval": "1m",
+      "model": "AI_UPGRADED",
+      "total_trades": 413,
+      "win_rate_pct": 47.2,
+      "total_inr": -256136.35,
+      "profit_factor": 0.81,
+      "sl_trap_pct": 42.4,
+      "avg_post_tp_run_atr": 1.83
+    }
+  },
+  {
+    "symbol": "NATURALGAS",
+    "interval": "5m",
+    "baseline": {
+      "symbol": "NATURALGAS",
+      "name": "Natural Gas",
+      "interval": "5m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 907,
+      "win_rate_pct": 39.7,
+      "total_inr": 22773.88,
+      "profit_factor": 1.06,
+      "sl_trap_pct": 60.7,
+      "avg_post_tp_run_atr": 1.78
+    },
+    "upgraded": {
+      "symbol": "NATURALGAS",
+      "name": "Natural Gas",
+      "interval": "5m",
+      "model": "AI_UPGRADED",
+      "total_trades": 659,
+      "win_rate_pct": 49.2,
+      "total_inr": -104441.16,
+      "profit_factor": 0.75,
+      "sl_trap_pct": 49.4,
+      "avg_post_tp_run_atr": 2.04
+    }
+  },
+  {
+    "symbol": "NATURALGAS",
+    "interval": "1m",
+    "baseline": {
+      "symbol": "NATURALGAS",
+      "name": "Natural Gas",
+      "interval": "1m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 467,
+      "win_rate_pct": 37.5,
+      "total_inr": 263.85,
+      "profit_factor": 1.0,
+      "sl_trap_pct": 51.9,
+      "avg_post_tp_run_atr": 1.93
+    },
+    "upgraded": {
+      "symbol": "NATURALGAS",
+      "name": "Natural Gas",
+      "interval": "1m",
+      "model": "AI_UPGRADED",
+      "total_trades": 378,
+      "win_rate_pct": 49.7,
+      "total_inr": -15911.68,
+      "profit_factor": 0.87,
+      "sl_trap_pct": 40.2,
+      "avg_post_tp_run_atr": 2.06
+    }
+  },
+  {
+    "symbol": "COPPER",
+    "interval": "5m",
+    "baseline": {
+      "symbol": "COPPER",
+      "name": "Copper",
+      "interval": "5m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 892,
+      "win_rate_pct": 43.9,
+      "total_inr": 464356.47,
+      "profit_factor": 1.28,
+      "sl_trap_pct": 58.5,
+      "avg_post_tp_run_atr": 1.81
+    },
+    "upgraded": {
+      "symbol": "COPPER",
+      "name": "Copper",
+      "interval": "5m",
+      "model": "AI_UPGRADED",
+      "total_trades": 620,
+      "win_rate_pct": 55.8,
+      "total_inr": 265128.3,
+      "profit_factor": 1.18,
+      "sl_trap_pct": 45.1,
+      "avg_post_tp_run_atr": 2.07
+    }
+  },
+  {
+    "symbol": "COPPER",
+    "interval": "1m",
+    "baseline": {
+      "symbol": "COPPER",
+      "name": "Copper",
+      "interval": "1m",
+      "model": "BASELINE_STATIC",
+      "total_trades": 482,
+      "win_rate_pct": 40.0,
+      "total_inr": 6390.91,
+      "profit_factor": 1.02,
+      "sl_trap_pct": 57.4,
+      "avg_post_tp_run_atr": 1.72
+    },
+    "upgraded": {
+      "symbol": "COPPER",
+      "name": "Copper",
+      "interval": "1m",
+      "model": "AI_UPGRADED",
+      "total_trades": 378,
+      "win_rate_pct": 50.5,
+      "total_inr": -20615.35,
+      "profit_factor": 0.95,
+      "sl_trap_pct": 34.8,
+      "avg_post_tp_run_atr": 1.76
+    }
+  }
+]

@@ -1,0 +1,533 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "total_trades": 17,
+    "tp1_rate": 64.71,
+    "tp2_rate": 17.65,
+    "tp3_rate": 5.88,
+    "sl_rate": 29.41,
+    "profit_factor": 0.49,
+    "avg_gain_pct": 2.44,
+    "avg_loss_pct": 2.97,
+    "post_tp1_run_pts": 38.6,
+    "post_tp1_run_atr": 1.8,
+    "max_post_tp1_run_pts": 71.6,
+    "post_sl_drop_pts": 47.5,
+    "stop_hunt_rev_rate": 60.0,
+    "cumulative_pts": 52.7,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 6,
+        "tp1_hit_rate": 66.7,
+        "tp2_hit_rate": 16.7,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 33.3,
+        "avg_pnl_pct": -0.81,
+        "total_pts": -8.9
+      },
+      {
+        "year": 2024,
+        "total_trades": 6,
+        "tp1_hit_rate": 50.0,
+        "tp2_hit_rate": 16.7,
+        "tp3_hit_rate": 16.7,
+        "sl_hit_rate": 33.3,
+        "avg_pnl_pct": -0.17,
+        "total_pts": 6.5
+      },
+      {
+        "year": 2025,
+        "total_trades": 3,
+        "tp1_hit_rate": 66.7,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 33.3,
+        "avg_pnl_pct": -1.09,
+        "total_pts": -12.1
+      },
+      {
+        "year": 2026,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.81,
+        "total_pts": 67.3
+      }
+    ]
+  },
+  {
+    "symbol": "TCS",
+    "total_trades": 17,
+    "tp1_rate": 76.47,
+    "tp2_rate": 17.65,
+    "tp3_rate": 0.0,
+    "sl_rate": 23.53,
+    "profit_factor": 0.26,
+    "avg_gain_pct": 1.17,
+    "avg_loss_pct": 3.35,
+    "post_tp1_run_pts": 122.2,
+    "post_tp1_run_atr": 1.93,
+    "max_post_tp1_run_pts": 225.1,
+    "post_sl_drop_pts": 171.6,
+    "stop_hunt_rev_rate": 50.0,
+    "cumulative_pts": 237.0,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 5,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 20.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.25,
+        "total_pts": 203.2
+      },
+      {
+        "year": 2024,
+        "total_trades": 8,
+        "tp1_hit_rate": 75.0,
+        "tp2_hit_rate": 12.5,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 25.0,
+        "avg_pnl_pct": -0.62,
+        "total_pts": 107.9
+      },
+      {
+        "year": 2025,
+        "total_trades": 1,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 100.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 1.0,
+        "total_pts": 62.3
+      },
+      {
+        "year": 2026,
+        "total_trades": 3,
+        "tp1_hit_rate": 33.3,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 66.7,
+        "avg_pnl_pct": -2.38,
+        "total_pts": -136.4
+      }
+    ]
+  },
+  {
+    "symbol": "INFY",
+    "total_trades": 12,
+    "tp1_rate": 83.33,
+    "tp2_rate": 41.67,
+    "tp3_rate": 8.33,
+    "sl_rate": 16.67,
+    "profit_factor": 1.95,
+    "avg_gain_pct": 2.28,
+    "avg_loss_pct": 2.93,
+    "post_tp1_run_pts": 68.4,
+    "post_tp1_run_atr": 2.33,
+    "max_post_tp1_run_pts": 181.8,
+    "post_sl_drop_pts": 228.3,
+    "stop_hunt_rev_rate": 100.0,
+    "cumulative_pts": 256.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.53,
+        "total_pts": 46.2
+      },
+      {
+        "year": 2024,
+        "total_trades": 6,
+        "tp1_hit_rate": 83.3,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 16.7,
+        "sl_hit_rate": 16.7,
+        "avg_pnl_pct": 0.92,
+        "total_pts": 171.4
+      },
+      {
+        "year": 2025,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 37.7
+      },
+      {
+        "year": 2026,
+        "total_trades": 2,
+        "tp1_hit_rate": 50.0,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 50.0,
+        "avg_pnl_pct": -0.52,
+        "total_pts": 1.5
+      }
+    ]
+  },
+  {
+    "symbol": "HDFCBANK",
+    "total_trades": 17,
+    "tp1_rate": 76.47,
+    "tp2_rate": 29.41,
+    "tp3_rate": 0.0,
+    "sl_rate": 0.0,
+    "profit_factor": 9.9,
+    "avg_gain_pct": 0.78,
+    "avg_loss_pct": 0,
+    "post_tp1_run_pts": 31.5,
+    "post_tp1_run_atr": 2.07,
+    "max_post_tp1_run_pts": 47.0,
+    "post_sl_drop_pts": 0.0,
+    "stop_hunt_rev_rate": 0.0,
+    "cumulative_pts": 129.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 5,
+        "tp1_hit_rate": 60.0,
+        "tp2_hit_rate": 40.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.3,
+        "total_pts": 30.5
+      },
+      {
+        "year": 2024,
+        "total_trades": 3,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 33.3,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.25,
+        "total_pts": 27.4
+      },
+      {
+        "year": 2025,
+        "total_trades": 5,
+        "tp1_hit_rate": 60.0,
+        "tp2_hit_rate": 20.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.13,
+        "total_pts": 28.6
+      },
+      {
+        "year": 2026,
+        "total_trades": 4,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 25.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.25,
+        "total_pts": 43.3
+      }
+    ]
+  },
+  {
+    "symbol": "ICICIBANK",
+    "total_trades": 12,
+    "tp1_rate": 91.67,
+    "tp2_rate": 33.33,
+    "tp3_rate": 16.67,
+    "sl_rate": 0.0,
+    "profit_factor": 9.9,
+    "avg_gain_pct": 2.04,
+    "avg_loss_pct": 0,
+    "post_tp1_run_pts": 36.4,
+    "post_tp1_run_atr": 2.01,
+    "max_post_tp1_run_pts": 94.2,
+    "post_sl_drop_pts": 0.0,
+    "stop_hunt_rev_rate": 0.0,
+    "cumulative_pts": 191.3,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 3,
+        "tp1_hit_rate": 66.7,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 11.6
+      },
+      {
+        "year": 2024,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 15.6
+      },
+      {
+        "year": 2025,
+        "total_trades": 5,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 60.0,
+        "tp3_hit_rate": 40.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 1.47,
+        "total_pts": 125.3
+      },
+      {
+        "year": 2026,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.41,
+        "total_pts": 38.7
+      }
+    ]
+  },
+  {
+    "symbol": "SBIN",
+    "total_trades": 18,
+    "tp1_rate": 88.89,
+    "tp2_rate": 22.22,
+    "tp3_rate": 5.56,
+    "sl_rate": 11.11,
+    "profit_factor": 0.93,
+    "avg_gain_pct": 1.57,
+    "avg_loss_pct": 3.38,
+    "post_tp1_run_pts": 46.0,
+    "post_tp1_run_atr": 3.6,
+    "max_post_tp1_run_pts": 158.8,
+    "post_sl_drop_pts": 34.0,
+    "stop_hunt_rev_rate": 0.0,
+    "cumulative_pts": 149.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 8,
+        "tp1_hit_rate": 75.0,
+        "tp2_hit_rate": 37.5,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 25.0,
+        "avg_pnl_pct": -0.45,
+        "total_pts": 20.1
+      },
+      {
+        "year": 2024,
+        "total_trades": 4,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 44.7
+      },
+      {
+        "year": 2025,
+        "total_trades": 4,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 25.0,
+        "tp3_hit_rate": 25.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.79,
+        "total_pts": 54.1
+      },
+      {
+        "year": 2026,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 30.9
+      }
+    ]
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "total_trades": 18,
+    "tp1_rate": 77.78,
+    "tp2_rate": 22.22,
+    "tp3_rate": 5.56,
+    "sl_rate": 22.22,
+    "profit_factor": 0.69,
+    "avg_gain_pct": 2.33,
+    "avg_loss_pct": 3.38,
+    "post_tp1_run_pts": 66.4,
+    "post_tp1_run_atr": 2.65,
+    "max_post_tp1_run_pts": 146.9,
+    "post_sl_drop_pts": 111.9,
+    "stop_hunt_rev_rate": 25.0,
+    "cumulative_pts": 135.7,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 5,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 20.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.26,
+        "total_pts": 57.4
+      },
+      {
+        "year": 2024,
+        "total_trades": 4,
+        "tp1_hit_rate": 75.0,
+        "tp2_hit_rate": 50.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 25.0,
+        "avg_pnl_pct": -0.19,
+        "total_pts": 58.1
+      },
+      {
+        "year": 2025,
+        "total_trades": 3,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 67.4
+      },
+      {
+        "year": 2026,
+        "total_trades": 6,
+        "tp1_hit_rate": 50.0,
+        "tp2_hit_rate": 16.7,
+        "tp3_hit_rate": 16.7,
+        "sl_hit_rate": 50.0,
+        "avg_pnl_pct": -0.79,
+        "total_pts": -47.3
+      }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "total_trades": 10,
+    "tp1_rate": 90.0,
+    "tp2_rate": 0.0,
+    "tp3_rate": 0.0,
+    "sl_rate": 10.0,
+    "profit_factor": 0.57,
+    "avg_gain_pct": 1.7,
+    "avg_loss_pct": 2.98,
+    "post_tp1_run_pts": 11.4,
+    "post_tp1_run_atr": 1.69,
+    "max_post_tp1_run_pts": 27.2,
+    "post_sl_drop_pts": 12.8,
+    "stop_hunt_rev_rate": 0.0,
+    "cumulative_pts": 28.7,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 2,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 8.2
+      },
+      {
+        "year": 2024,
+        "total_trades": 2,
+        "tp1_hit_rate": 50.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 50.0,
+        "avg_pnl_pct": -1.49,
+        "total_pts": -6.7
+      },
+      {
+        "year": 2025,
+        "total_trades": 3,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 15.1
+      },
+      {
+        "year": 2026,
+        "total_trades": 3,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.57,
+        "total_pts": 12.1
+      }
+    ]
+  },
+  {
+    "symbol": "LT",
+    "total_trades": 15,
+    "tp1_rate": 80.0,
+    "tp2_rate": 26.67,
+    "tp3_rate": 0.0,
+    "sl_rate": 13.33,
+    "profit_factor": 0.71,
+    "avg_gain_pct": 1.64,
+    "avg_loss_pct": 4.6,
+    "post_tp1_run_pts": 89.9,
+    "post_tp1_run_atr": 1.42,
+    "max_post_tp1_run_pts": 332.9,
+    "post_sl_drop_pts": 102.2,
+    "stop_hunt_rev_rate": 50.0,
+    "cumulative_pts": 463.1,
+    "yearly": [
+      {
+        "year": 2023,
+        "total_trades": 6,
+        "tp1_hit_rate": 83.3,
+        "tp2_hit_rate": 16.7,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 16.7,
+        "avg_pnl_pct": -0.48,
+        "total_pts": 112.6
+      },
+      {
+        "year": 2024,
+        "total_trades": 3,
+        "tp1_hit_rate": 66.7,
+        "tp2_hit_rate": 33.3,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.49,
+        "total_pts": 156.1
+      },
+      {
+        "year": 2025,
+        "total_trades": 5,
+        "tp1_hit_rate": 80.0,
+        "tp2_hit_rate": 40.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 20.0,
+        "avg_pnl_pct": -0.25,
+        "total_pts": 139.8
+      },
+      {
+        "year": 2026,
+        "total_trades": 1,
+        "tp1_hit_rate": 100.0,
+        "tp2_hit_rate": 0.0,
+        "tp3_hit_rate": 0.0,
+        "sl_hit_rate": 0.0,
+        "avg_pnl_pct": 0.0,
+        "total_pts": 54.5
+      }
+    ]
+  }
+]

@@ -1,0 +1,1150 @@
+{
+  "findings": [
+    {
+      "sym": "NIFTY50",
+      "tf": "1d",
+      "sigs": 25,
+      "closed": 25,
+      "tp1p": 100.0,
+      "tp2p": 32.0,
+      "slp": 0.0,
+      "trapp": 0.0,
+      "whipp": 68.0,
+      "missp": 32.0,
+      "exp": 157.8,
+      "net": 3944.92,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "NIFTY50",
+      "tf": "1h",
+      "sigs": 170,
+      "closed": 168,
+      "tp1p": 84.5,
+      "tp2p": 47.6,
+      "slp": 15.5,
+      "trapp": 26.9,
+      "whipp": 43.7,
+      "missp": 31.2,
+      "exp": 35.24,
+      "net": 5921.03,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "NIFTY50",
+      "tf": "15m",
+      "sigs": 17,
+      "closed": 17,
+      "tp1p": 88.2,
+      "tp2p": 17.6,
+      "slp": 11.8,
+      "trapp": 100.0,
+      "whipp": 80.0,
+      "missp": 47.1,
+      "exp": 13.68,
+      "net": 232.52,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "NIFTY50",
+      "tf": "5m",
+      "sigs": 48,
+      "closed": 48,
+      "tp1p": 81.2,
+      "tp2p": 14.6,
+      "slp": 18.8,
+      "trapp": 100.0,
+      "whipp": 82.1,
+      "missp": 33.3,
+      "exp": 0.69,
+      "net": 33.2,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BANKNIFTY",
+      "tf": "1d",
+      "sigs": 24,
+      "closed": 24,
+      "tp1p": 91.7,
+      "tp2p": 54.2,
+      "slp": 8.3,
+      "trapp": 0.0,
+      "whipp": 40.9,
+      "missp": 45.8,
+      "exp": 444.98,
+      "net": 10679.53,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BANKNIFTY",
+      "tf": "1h",
+      "sigs": 159,
+      "closed": 159,
+      "tp1p": 82.4,
+      "tp2p": 42.8,
+      "slp": 17.6,
+      "trapp": 14.3,
+      "whipp": 48.1,
+      "missp": 50.9,
+      "exp": 56.53,
+      "net": 8988.31,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BANKNIFTY",
+      "tf": "15m",
+      "sigs": 14,
+      "closed": 14,
+      "tp1p": 92.9,
+      "tp2p": 21.4,
+      "slp": 7.1,
+      "trapp": 100.0,
+      "whipp": 76.9,
+      "missp": 64.3,
+      "exp": 59.49,
+      "net": 832.89,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BANKNIFTY",
+      "tf": "5m",
+      "sigs": 32,
+      "closed": 32,
+      "tp1p": 78.1,
+      "tp2p": 28.1,
+      "slp": 21.9,
+      "trapp": 100.0,
+      "whipp": 64.0,
+      "missp": 56.2,
+      "exp": 11.21,
+      "net": 358.88,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "RELIANCE",
+      "tf": "1d",
+      "sigs": 26,
+      "closed": 26,
+      "tp1p": 73.1,
+      "tp2p": 15.4,
+      "slp": 26.9,
+      "trapp": 0.0,
+      "whipp": 78.9,
+      "missp": 50.0,
+      "exp": -3.62,
+      "net": -94.18,
+      "flags": [
+        "HIGH_SL",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "RELIANCE",
+      "tf": "1h",
+      "sigs": 168,
+      "closed": 167,
+      "tp1p": 82.0,
+      "tp2p": 38.9,
+      "slp": 18.0,
+      "trapp": 3.3,
+      "whipp": 52.6,
+      "missp": 24.4,
+      "exp": 2.2,
+      "net": 367.12,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "RELIANCE",
+      "tf": "15m",
+      "sigs": 8,
+      "closed": 8,
+      "tp1p": 87.5,
+      "tp2p": 37.5,
+      "slp": 12.5,
+      "trapp": 0.0,
+      "whipp": 57.1,
+      "missp": 62.5,
+      "exp": 1.7,
+      "net": 13.59,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "RELIANCE",
+      "tf": "5m",
+      "sigs": 38,
+      "closed": 38,
+      "tp1p": 92.1,
+      "tp2p": 36.8,
+      "slp": 7.9,
+      "trapp": 33.3,
+      "whipp": 60.0,
+      "missp": 15.8,
+      "exp": 0.87,
+      "net": 33.04,
+      "flags": [
+        "TRAP",
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "TCS",
+      "tf": "1d",
+      "sigs": 23,
+      "closed": 23,
+      "tp1p": 78.3,
+      "tp2p": 8.7,
+      "slp": 21.7,
+      "trapp": 0.0,
+      "whipp": 88.9,
+      "missp": 78.3,
+      "exp": -5.21,
+      "net": -119.91,
+      "flags": [
+        "HIGH_SL",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "TCS",
+      "tf": "1h",
+      "sigs": 142,
+      "closed": 140,
+      "tp1p": 82.1,
+      "tp2p": 40.7,
+      "slp": 17.9,
+      "trapp": 4.0,
+      "whipp": 50.4,
+      "missp": 48.6,
+      "exp": 4.27,
+      "net": 597.75,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "TCS",
+      "tf": "15m",
+      "sigs": 17,
+      "closed": 15,
+      "tp1p": 93.3,
+      "tp2p": 40.0,
+      "slp": 6.7,
+      "trapp": 0.0,
+      "whipp": 57.1,
+      "missp": 58.8,
+      "exp": 5.99,
+      "net": 89.91,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "TCS",
+      "tf": "5m",
+      "sigs": 33,
+      "closed": 33,
+      "tp1p": 87.9,
+      "tp2p": 30.3,
+      "slp": 12.1,
+      "trapp": 50.0,
+      "whipp": 65.5,
+      "missp": 54.5,
+      "exp": 2.34,
+      "net": 77.19,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "INFY",
+      "tf": "1d",
+      "sigs": 17,
+      "closed": 17,
+      "tp1p": 82.4,
+      "tp2p": 41.2,
+      "slp": 17.6,
+      "trapp": 0.0,
+      "whipp": 50.0,
+      "missp": 29.4,
+      "exp": 6.89,
+      "net": 117.1,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "INFY",
+      "tf": "1h",
+      "sigs": 174,
+      "closed": 172,
+      "tp1p": 84.9,
+      "tp2p": 37.2,
+      "slp": 15.1,
+      "trapp": 0.0,
+      "whipp": 56.2,
+      "missp": 32.2,
+      "exp": 3.17,
+      "net": 544.88,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "INFY",
+      "tf": "15m",
+      "sigs": 9,
+      "closed": 9,
+      "tp1p": 100.0,
+      "tp2p": 55.6,
+      "slp": 0.0,
+      "trapp": 0.0,
+      "whipp": 44.4,
+      "missp": 33.3,
+      "exp": 4.75,
+      "net": 42.71,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "INFY",
+      "tf": "5m",
+      "sigs": 30,
+      "closed": 29,
+      "tp1p": 75.9,
+      "tp2p": 31.0,
+      "slp": 24.1,
+      "trapp": 57.1,
+      "whipp": 59.1,
+      "missp": 33.3,
+      "exp": 0.22,
+      "net": 6.4,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "HDFCBANK",
+      "tf": "1d",
+      "sigs": 21,
+      "closed": 21,
+      "tp1p": 85.7,
+      "tp2p": 42.9,
+      "slp": 14.3,
+      "trapp": 0.0,
+      "whipp": 50.0,
+      "missp": 14.3,
+      "exp": 8.1,
+      "net": 170.0,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "HDFCBANK",
+      "tf": "1h",
+      "sigs": 169,
+      "closed": 167,
+      "tp1p": 88.0,
+      "tp2p": 39.5,
+      "slp": 12.0,
+      "trapp": 0.0,
+      "whipp": 55.1,
+      "missp": 8.9,
+      "exp": 1.88,
+      "net": 313.42,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "HDFCBANK",
+      "tf": "15m",
+      "sigs": 14,
+      "closed": 14,
+      "tp1p": 78.6,
+      "tp2p": 28.6,
+      "slp": 21.4,
+      "trapp": 33.3,
+      "whipp": 63.6,
+      "missp": 42.9,
+      "exp": -0.1,
+      "net": -1.35,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "HDFCBANK",
+      "tf": "5m",
+      "sigs": 35,
+      "closed": 33,
+      "tp1p": 66.7,
+      "tp2p": 15.2,
+      "slp": 33.3,
+      "trapp": 81.8,
+      "whipp": 77.3,
+      "missp": 2.9,
+      "exp": -0.37,
+      "net": -12.1,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "ICICIBANK",
+      "tf": "1d",
+      "sigs": 22,
+      "closed": 22,
+      "tp1p": 86.4,
+      "tp2p": 22.7,
+      "slp": 13.6,
+      "trapp": 0.0,
+      "whipp": 73.7,
+      "missp": 18.2,
+      "exp": 2.71,
+      "net": 59.58,
+      "flags": [
+        "WHIPSAW",
+        "LOW_TP2"
+      ]
+    },
+    {
+      "sym": "ICICIBANK",
+      "tf": "1h",
+      "sigs": 172,
+      "closed": 172,
+      "tp1p": 83.7,
+      "tp2p": 37.2,
+      "slp": 16.3,
+      "trapp": 3.6,
+      "whipp": 55.6,
+      "missp": 20.3,
+      "exp": 2.52,
+      "net": 434.03,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "ICICIBANK",
+      "tf": "15m",
+      "sigs": 5,
+      "closed": 5,
+      "tp1p": 60.0,
+      "tp2p": 40.0,
+      "slp": 40.0,
+      "trapp": 0.0,
+      "whipp": 33.3,
+      "missp": 60.0,
+      "exp": -3.41,
+      "net": -17.06,
+      "flags": [
+        "HIGH_SL",
+        "BIG_MISS",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "ICICIBANK",
+      "tf": "5m",
+      "sigs": 25,
+      "closed": 24,
+      "tp1p": 91.7,
+      "tp2p": 29.2,
+      "slp": 8.3,
+      "trapp": 50.0,
+      "whipp": 68.2,
+      "missp": 28.0,
+      "exp": 0.91,
+      "net": 21.73,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "SBIN",
+      "tf": "1d",
+      "sigs": 33,
+      "closed": 33,
+      "tp1p": 97.0,
+      "tp2p": 27.3,
+      "slp": 3.0,
+      "trapp": 0.0,
+      "whipp": 71.9,
+      "missp": 15.2,
+      "exp": 8.81,
+      "net": 290.88,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "SBIN",
+      "tf": "1h",
+      "sigs": 178,
+      "closed": 176,
+      "tp1p": 89.8,
+      "tp2p": 38.6,
+      "slp": 10.2,
+      "trapp": 0.0,
+      "whipp": 57.0,
+      "missp": 13.5,
+      "exp": 3.25,
+      "net": 571.97,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "SBIN",
+      "tf": "15m",
+      "sigs": 13,
+      "closed": 12,
+      "tp1p": 91.7,
+      "tp2p": 50.0,
+      "slp": 8.3,
+      "trapp": 0.0,
+      "whipp": 45.5,
+      "missp": 23.1,
+      "exp": 2.09,
+      "net": 25.14,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "SBIN",
+      "tf": "5m",
+      "sigs": 42,
+      "closed": 42,
+      "tp1p": 78.6,
+      "tp2p": 26.2,
+      "slp": 21.4,
+      "trapp": 66.7,
+      "whipp": 66.7,
+      "missp": 21.4,
+      "exp": -0.26,
+      "net": -10.85,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "BHARTIARTL",
+      "tf": "1d",
+      "sigs": 26,
+      "closed": 25,
+      "tp1p": 92.0,
+      "tp2p": 32.0,
+      "slp": 8.0,
+      "trapp": 0.0,
+      "whipp": 65.2,
+      "missp": 26.9,
+      "exp": 12.15,
+      "net": 303.8,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BHARTIARTL",
+      "tf": "1h",
+      "sigs": 196,
+      "closed": 195,
+      "tp1p": 83.6,
+      "tp2p": 45.1,
+      "slp": 16.4,
+      "trapp": 0.0,
+      "whipp": 46.0,
+      "missp": 24.5,
+      "exp": 4.23,
+      "net": 825.09,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "BHARTIARTL",
+      "tf": "15m",
+      "sigs": 12,
+      "closed": 12,
+      "tp1p": 91.7,
+      "tp2p": 16.7,
+      "slp": 8.3,
+      "trapp": 0.0,
+      "whipp": 81.8,
+      "missp": 66.7,
+      "exp": 2.79,
+      "net": 33.54,
+      "flags": [
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BHARTIARTL",
+      "tf": "5m",
+      "sigs": 33,
+      "closed": 32,
+      "tp1p": 87.5,
+      "tp2p": 25.0,
+      "slp": 12.5,
+      "trapp": 75.0,
+      "whipp": 71.4,
+      "missp": 42.4,
+      "exp": 0.96,
+      "net": 30.78,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "ITC",
+      "tf": "1d",
+      "sigs": 25,
+      "closed": 25,
+      "tp1p": 92.0,
+      "tp2p": 40.0,
+      "slp": 8.0,
+      "trapp": 0.0,
+      "whipp": 56.5,
+      "missp": 0.0,
+      "exp": 4.03,
+      "net": 100.74,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "ITC",
+      "tf": "1h",
+      "sigs": 139,
+      "closed": 139,
+      "tp1p": 81.3,
+      "tp2p": 32.4,
+      "slp": 18.7,
+      "trapp": 0.0,
+      "whipp": 60.2,
+      "missp": 0.7,
+      "exp": 0.15,
+      "net": 21.39,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "ITC",
+      "tf": "15m",
+      "sigs": 17,
+      "closed": 17,
+      "tp1p": 94.1,
+      "tp2p": 29.4,
+      "slp": 5.9,
+      "trapp": 0.0,
+      "whipp": 68.8,
+      "missp": 5.9,
+      "exp": 0.49,
+      "net": 8.3,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "ITC",
+      "tf": "5m",
+      "sigs": 41,
+      "closed": 41,
+      "tp1p": 80.5,
+      "tp2p": 36.6,
+      "slp": 19.5,
+      "trapp": 50.0,
+      "whipp": 54.5,
+      "missp": 0.0,
+      "exp": 0.02,
+      "net": 0.83,
+      "flags": [
+        "TRAP",
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "KOTAKBANK",
+      "tf": "1d",
+      "sigs": 22,
+      "closed": 22,
+      "tp1p": 95.5,
+      "tp2p": 36.4,
+      "slp": 4.5,
+      "trapp": 0.0,
+      "whipp": 61.9,
+      "missp": 0.0,
+      "exp": 5.71,
+      "net": 125.66,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "KOTAKBANK",
+      "tf": "1h",
+      "sigs": 163,
+      "closed": 158,
+      "tp1p": 85.4,
+      "tp2p": 39.9,
+      "slp": 14.6,
+      "trapp": 4.3,
+      "whipp": 53.3,
+      "missp": 1.2,
+      "exp": 1.16,
+      "net": 182.68,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "KOTAKBANK",
+      "tf": "15m",
+      "sigs": 12,
+      "closed": 11,
+      "tp1p": 90.9,
+      "tp2p": 45.5,
+      "slp": 9.1,
+      "trapp": 100.0,
+      "whipp": 50.0,
+      "missp": 33.3,
+      "exp": 1.1,
+      "net": 12.13,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "KOTAKBANK",
+      "tf": "5m",
+      "sigs": 35,
+      "closed": 34,
+      "tp1p": 76.5,
+      "tp2p": 44.1,
+      "slp": 23.5,
+      "trapp": 87.5,
+      "whipp": 42.3,
+      "missp": 0.0,
+      "exp": 0.34,
+      "net": 11.7,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "LT",
+      "tf": "1d",
+      "sigs": 29,
+      "closed": 29,
+      "tp1p": 100.0,
+      "tp2p": 34.5,
+      "slp": 0.0,
+      "trapp": 0.0,
+      "whipp": 65.5,
+      "missp": 51.7,
+      "exp": 40.47,
+      "net": 1173.59,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "LT",
+      "tf": "1h",
+      "sigs": 173,
+      "closed": 171,
+      "tp1p": 81.3,
+      "tp2p": 40.4,
+      "slp": 18.7,
+      "trapp": 3.1,
+      "whipp": 50.4,
+      "missp": 50.3,
+      "exp": 6.0,
+      "net": 1026.26,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "LT",
+      "tf": "15m",
+      "sigs": 12,
+      "closed": 12,
+      "tp1p": 75.0,
+      "tp2p": 25.0,
+      "slp": 25.0,
+      "trapp": 66.7,
+      "whipp": 66.7,
+      "missp": 58.3,
+      "exp": -1.19,
+      "net": -14.25,
+      "flags": [
+        "HIGH_SL",
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS",
+        "NEG_EV"
+      ]
+    },
+    {
+      "sym": "LT",
+      "tf": "5m",
+      "sigs": 29,
+      "closed": 28,
+      "tp1p": 89.3,
+      "tp2p": 25.0,
+      "slp": 10.7,
+      "trapp": 100.0,
+      "whipp": 72.0,
+      "missp": 65.5,
+      "exp": 2.72,
+      "net": 76.16,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "AXISBANK",
+      "tf": "1d",
+      "sigs": 22,
+      "closed": 21,
+      "tp1p": 100.0,
+      "tp2p": 42.9,
+      "slp": 0.0,
+      "trapp": 0.0,
+      "whipp": 57.1,
+      "missp": 18.2,
+      "exp": 18.63,
+      "net": 391.13,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "AXISBANK",
+      "tf": "1h",
+      "sigs": 164,
+      "closed": 164,
+      "tp1p": 87.8,
+      "tp2p": 39.6,
+      "slp": 12.2,
+      "trapp": 0.0,
+      "whipp": 54.9,
+      "missp": 22.0,
+      "exp": 3.61,
+      "net": 591.79,
+      "flags": [
+        "WHIPSAW"
+      ]
+    },
+    {
+      "sym": "AXISBANK",
+      "tf": "15m",
+      "sigs": 11,
+      "closed": 11,
+      "tp1p": 90.9,
+      "tp2p": 45.5,
+      "slp": 9.1,
+      "trapp": 0.0,
+      "whipp": 50.0,
+      "missp": 27.3,
+      "exp": 1.22,
+      "net": 13.37,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "AXISBANK",
+      "tf": "5m",
+      "sigs": 38,
+      "closed": 37,
+      "tp1p": 94.6,
+      "tp2p": 21.6,
+      "slp": 5.4,
+      "trapp": 100.0,
+      "whipp": 77.1,
+      "missp": 36.8,
+      "exp": 1.19,
+      "net": 43.9,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "MARUTI",
+      "tf": "1d",
+      "sigs": 29,
+      "closed": 29,
+      "tp1p": 93.1,
+      "tp2p": 48.3,
+      "slp": 6.9,
+      "trapp": 0.0,
+      "whipp": 48.1,
+      "missp": 48.3,
+      "exp": 168.32,
+      "net": 4881.22,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "MARUTI",
+      "tf": "1h",
+      "sigs": 173,
+      "closed": 170,
+      "tp1p": 86.5,
+      "tp2p": 43.5,
+      "slp": 13.5,
+      "trapp": 0.0,
+      "whipp": 49.7,
+      "missp": 54.9,
+      "exp": 38.43,
+      "net": 6532.32,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "MARUTI",
+      "tf": "15m",
+      "sigs": 9,
+      "closed": 9,
+      "tp1p": 88.9,
+      "tp2p": 22.2,
+      "slp": 11.1,
+      "trapp": 0.0,
+      "whipp": 75.0,
+      "missp": 77.8,
+      "exp": 10.24,
+      "net": 92.15,
+      "flags": [
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "MARUTI",
+      "tf": "5m",
+      "sigs": 28,
+      "closed": 28,
+      "tp1p": 92.9,
+      "tp2p": 46.4,
+      "slp": 7.1,
+      "trapp": 100.0,
+      "whipp": 50.0,
+      "missp": 46.4,
+      "exp": 16.8,
+      "net": 470.33,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BAJFINANCE",
+      "tf": "1d",
+      "sigs": 29,
+      "closed": 29,
+      "tp1p": 89.7,
+      "tp2p": 24.1,
+      "slp": 10.3,
+      "trapp": 0.0,
+      "whipp": 73.1,
+      "missp": 27.6,
+      "exp": 7.3,
+      "net": 211.69,
+      "flags": [
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BAJFINANCE",
+      "tf": "1h",
+      "sigs": 168,
+      "closed": 164,
+      "tp1p": 84.8,
+      "tp2p": 39.6,
+      "slp": 15.2,
+      "trapp": 0.0,
+      "whipp": 53.2,
+      "missp": 32.7,
+      "exp": 7.96,
+      "net": 1305.43,
+      "flags": [
+        "WHIPSAW",
+        "BIG_MISS"
+      ]
+    },
+    {
+      "sym": "BAJFINANCE",
+      "tf": "15m",
+      "sigs": 5,
+      "closed": 5,
+      "tp1p": 100.0,
+      "tp2p": 60.0,
+      "slp": 0.0,
+      "trapp": 0.0,
+      "whipp": 40.0,
+      "missp": 20.0,
+      "exp": 4.18,
+      "net": 20.88,
+      "flags": []
+    },
+    {
+      "sym": "BAJFINANCE",
+      "tf": "5m",
+      "sigs": 33,
+      "closed": 31,
+      "tp1p": 90.3,
+      "tp2p": 19.4,
+      "slp": 9.7,
+      "trapp": 33.3,
+      "whipp": 78.6,
+      "missp": 27.3,
+      "exp": 0.65,
+      "net": 20.04,
+      "flags": [
+        "TRAP",
+        "WHIPSAW",
+        "LOW_TP2",
+        "BIG_MISS"
+      ]
+    }
+  ],
+  "tf_summary": {
+    "1d": {
+      "sigs": 373,
+      "tp1": 337,
+      "tp2": 123,
+      "sl": 34,
+      "traps": 0,
+      "whips": 214,
+      "bmiss": 115,
+      "net": 22235.749999999996
+    },
+    "1h": {
+      "sigs": 2508,
+      "tp1": 2100,
+      "tp2": 1001,
+      "sl": 382,
+      "traps": 16,
+      "whips": 1099,
+      "bmiss": 698,
+      "net": 28223.469999999998
+    },
+    "15m": {
+      "sigs": 175,
+      "tp1": 152,
+      "tp2": 57,
+      "sl": 19,
+      "traps": 7,
+      "whips": 95,
+      "bmiss": 78,
+      "net": 1384.4700000000005
+    },
+    "5m": {
+      "sigs": 520,
+      "tp1": 428,
+      "tp2": 144,
+      "sl": 82,
+      "traps": 61,
+      "whips": 284,
+      "bmiss": 154,
+      "net": 1161.2299999999998
+    }
+  }
+}

@@ -1,0 +1,668 @@
+[
+  {
+    "symbol": "AXISBANK",
+    "company": "AXISBANK",
+    "total_trades": 14,
+    "tp1_wins": 7,
+    "tp1_win_rate": 50.0,
+    "tp2_wins": 2,
+    "tp2_rate": 14.3,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 6,
+    "sl_rate": 42.9,
+    "fakeout_sl_count": 3,
+    "fakeout_sl_pct": 50.0,
+    "profit_factor": 0.36,
+    "cumulative_net_pts": -147.4,
+    "avg_run_past_tp1_pts": 47.3,
+    "avg_run_past_tp1_atr": 1.92,
+    "max_run_past_tp1_pts": 100.2,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": -18.2
+      },
+      {
+        "year": 2024,
+        "trades": 3,
+        "win_rate": 33.3,
+        "net_pts": -33.0
+      },
+      {
+        "year": 2025,
+        "trades": 5,
+        "win_rate": 40.0,
+        "net_pts": -94.3
+      },
+      {
+        "year": 2026,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": -1.8
+      }
+    ]
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "company": "BAJFINANCE",
+    "total_trades": 7,
+    "tp1_wins": 5,
+    "tp1_win_rate": 71.4,
+    "tp2_wins": 3,
+    "tp2_rate": 42.9,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 2,
+    "sl_rate": 28.6,
+    "fakeout_sl_count": 1,
+    "fakeout_sl_pct": 50.0,
+    "profit_factor": 1.28,
+    "cumulative_net_pts": 14.7,
+    "avg_run_past_tp1_pts": 55.2,
+    "avg_run_past_tp1_atr": 2.96,
+    "max_run_past_tp1_pts": 146.0,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 21.4
+      },
+      {
+        "year": 2024,
+        "trades": 2,
+        "win_rate": 0.0,
+        "net_pts": -52.6
+      },
+      {
+        "year": 2026,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 46.0
+      }
+    ]
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "company": "BHARTIARTL",
+    "total_trades": 16,
+    "tp1_wins": 12,
+    "tp1_win_rate": 75.0,
+    "tp2_wins": 3,
+    "tp2_rate": 18.8,
+    "tp3_wins": 1,
+    "tp3_rate": 6.2,
+    "sl_hits": 4,
+    "sl_rate": 25.0,
+    "fakeout_sl_count": 1,
+    "fakeout_sl_pct": 25.0,
+    "profit_factor": 0.69,
+    "cumulative_net_pts": -78.1,
+    "avg_run_past_tp1_pts": 66.3,
+    "avg_run_past_tp1_atr": 2.56,
+    "max_run_past_tp1_pts": 146.9,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 4,
+        "win_rate": 100.0,
+        "net_pts": 27.4
+      },
+      {
+        "year": 2024,
+        "trades": 4,
+        "win_rate": 75.0,
+        "net_pts": -10.5
+      },
+      {
+        "year": 2025,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 21.4
+      },
+      {
+        "year": 2026,
+        "trades": 6,
+        "win_rate": 50.0,
+        "net_pts": -116.4
+      }
+    ]
+  },
+  {
+    "symbol": "HDFCBANK",
+    "company": "HDFCBANK",
+    "total_trades": 14,
+    "tp1_wins": 9,
+    "tp1_win_rate": 64.3,
+    "tp2_wins": 3,
+    "tp2_rate": 21.4,
+    "tp3_wins": 2,
+    "tp3_rate": 14.3,
+    "sl_hits": 4,
+    "sl_rate": 28.6,
+    "fakeout_sl_count": 2,
+    "fakeout_sl_pct": 50.0,
+    "profit_factor": 0.89,
+    "cumulative_net_pts": -11.3,
+    "avg_run_past_tp1_pts": 29.8,
+    "avg_run_past_tp1_atr": 1.89,
+    "max_run_past_tp1_pts": 43.3,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 4,
+        "win_rate": 50.0,
+        "net_pts": -32.3
+      },
+      {
+        "year": 2024,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 14.8
+      },
+      {
+        "year": 2025,
+        "trades": 4,
+        "win_rate": 50.0,
+        "net_pts": 5.2
+      },
+      {
+        "year": 2026,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": 1.0
+      }
+    ]
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "company": "HINDUNILVR",
+    "total_trades": 13,
+    "tp1_wins": 9,
+    "tp1_win_rate": 69.2,
+    "tp2_wins": 1,
+    "tp2_rate": 7.7,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 4,
+    "sl_rate": 30.8,
+    "fakeout_sl_count": 1,
+    "fakeout_sl_pct": 25.0,
+    "profit_factor": 0.56,
+    "cumulative_net_pts": -124.4,
+    "avg_run_past_tp1_pts": 90.2,
+    "avg_run_past_tp1_atr": 1.84,
+    "max_run_past_tp1_pts": 232.1,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": -41.2
+      },
+      {
+        "year": 2025,
+        "trades": 5,
+        "win_rate": 100.0,
+        "net_pts": 104.5
+      },
+      {
+        "year": 2026,
+        "trades": 5,
+        "win_rate": 40.0,
+        "net_pts": -187.7
+      }
+    ]
+  },
+  {
+    "symbol": "ICICIBANK",
+    "company": "ICICIBANK",
+    "total_trades": 6,
+    "tp1_wins": 6,
+    "tp1_win_rate": 100.0,
+    "tp2_wins": 2,
+    "tp2_rate": 33.3,
+    "tp3_wins": 1,
+    "tp3_rate": 16.7,
+    "sl_hits": 0,
+    "sl_rate": 0.0,
+    "fakeout_sl_count": 0,
+    "fakeout_sl_pct": 0.0,
+    "profit_factor": 9.99,
+    "cumulative_net_pts": 75.8,
+    "avg_run_past_tp1_pts": 45.7,
+    "avg_run_past_tp1_atr": 2.4,
+    "max_run_past_tp1_pts": 90.6,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 4.3
+      },
+      {
+        "year": 2024,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 4.8
+      },
+      {
+        "year": 2025,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 57.0
+      },
+      {
+        "year": 2026,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 9.7
+      }
+    ]
+  },
+  {
+    "symbol": "INFY",
+    "company": "INFY",
+    "total_trades": 9,
+    "tp1_wins": 7,
+    "tp1_win_rate": 77.8,
+    "tp2_wins": 4,
+    "tp2_rate": 44.4,
+    "tp3_wins": 1,
+    "tp3_rate": 11.1,
+    "sl_hits": 2,
+    "sl_rate": 22.2,
+    "fakeout_sl_count": 2,
+    "fakeout_sl_pct": 100.0,
+    "profit_factor": 1.6,
+    "cumulative_net_pts": 52.4,
+    "avg_run_past_tp1_pts": 69.2,
+    "avg_run_past_tp1_atr": 2.58,
+    "max_run_past_tp1_pts": 181.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 27.4
+      },
+      {
+        "year": 2024,
+        "trades": 5,
+        "win_rate": 80.0,
+        "net_pts": 64.9
+      },
+      {
+        "year": 2025,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 9.2
+      },
+      {
+        "year": 2026,
+        "trades": 1,
+        "win_rate": 0.0,
+        "net_pts": -49.2
+      }
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "company": "ITC",
+    "total_trades": 9,
+    "tp1_wins": 7,
+    "tp1_win_rate": 77.8,
+    "tp2_wins": 0,
+    "tp2_rate": 0.0,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 1,
+    "sl_rate": 11.1,
+    "fakeout_sl_count": 0,
+    "fakeout_sl_pct": 0.0,
+    "profit_factor": 1.49,
+    "cumulative_net_pts": 5.3,
+    "avg_run_past_tp1_pts": 13.3,
+    "avg_run_past_tp1_atr": 1.93,
+    "max_run_past_tp1_pts": 27.2,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 2.1
+      },
+      {
+        "year": 2024,
+        "trades": 2,
+        "win_rate": 50.0,
+        "net_pts": -8.2
+      },
+      {
+        "year": 2025,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 7.5
+      },
+      {
+        "year": 2026,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": 3.9
+      }
+    ]
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "company": "KOTAKBANK",
+    "total_trades": 12,
+    "tp1_wins": 6,
+    "tp1_win_rate": 50.0,
+    "tp2_wins": 3,
+    "tp2_rate": 25.0,
+    "tp3_wins": 1,
+    "tp3_rate": 8.3,
+    "sl_hits": 5,
+    "sl_rate": 41.7,
+    "fakeout_sl_count": 3,
+    "fakeout_sl_pct": 60.0,
+    "profit_factor": 0.59,
+    "cumulative_net_pts": -21.1,
+    "avg_run_past_tp1_pts": 14.5,
+    "avg_run_past_tp1_atr": 1.96,
+    "max_run_past_tp1_pts": 30.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 4,
+        "win_rate": 75.0,
+        "net_pts": 8.0
+      },
+      {
+        "year": 2024,
+        "trades": 4,
+        "win_rate": 25.0,
+        "net_pts": -17.6
+      },
+      {
+        "year": 2025,
+        "trades": 2,
+        "win_rate": 0.0,
+        "net_pts": -21.7
+      },
+      {
+        "year": 2026,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 10.2
+      }
+    ]
+  },
+  {
+    "symbol": "LT",
+    "company": "LT",
+    "total_trades": 14,
+    "tp1_wins": 12,
+    "tp1_win_rate": 85.7,
+    "tp2_wins": 4,
+    "tp2_rate": 28.6,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 1,
+    "sl_rate": 7.1,
+    "fakeout_sl_count": 0,
+    "fakeout_sl_pct": 0.0,
+    "profit_factor": 2.57,
+    "cumulative_net_pts": 244.7,
+    "avg_run_past_tp1_pts": 80.8,
+    "avg_run_past_tp1_atr": 1.31,
+    "max_run_past_tp1_pts": 332.9,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 5,
+        "win_rate": 100.0,
+        "net_pts": 107.8
+      },
+      {
+        "year": 2024,
+        "trades": 2,
+        "win_rate": 50.0,
+        "net_pts": 69.2
+      },
+      {
+        "year": 2025,
+        "trades": 5,
+        "win_rate": 80.0,
+        "net_pts": 23.9
+      },
+      {
+        "year": 2026,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 43.8
+      }
+    ]
+  },
+  {
+    "symbol": "MARUTI",
+    "company": "MARUTI",
+    "total_trades": 10,
+    "tp1_wins": 8,
+    "tp1_win_rate": 80.0,
+    "tp2_wins": 4,
+    "tp2_rate": 40.0,
+    "tp3_wins": 1,
+    "tp3_rate": 10.0,
+    "sl_hits": 2,
+    "sl_rate": 20.0,
+    "fakeout_sl_count": 1,
+    "fakeout_sl_pct": 50.0,
+    "profit_factor": 1.6,
+    "cumulative_net_pts": 440.6,
+    "avg_run_past_tp1_pts": 448.5,
+    "avg_run_past_tp1_atr": 2.15,
+    "max_run_past_tp1_pts": 1268.4,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": -180.4
+      },
+      {
+        "year": 2024,
+        "trades": 6,
+        "win_rate": 83.3,
+        "net_pts": 537.5
+      },
+      {
+        "year": 2025,
+        "trades": 1,
+        "win_rate": 100.0,
+        "net_pts": 83.5
+      }
+    ]
+  },
+  {
+    "symbol": "RELIANCE",
+    "company": "RELIANCE",
+    "total_trades": 14,
+    "tp1_wins": 9,
+    "tp1_win_rate": 64.3,
+    "tp2_wins": 3,
+    "tp2_rate": 21.4,
+    "tp3_wins": 1,
+    "tp3_rate": 7.1,
+    "sl_hits": 4,
+    "sl_rate": 28.6,
+    "fakeout_sl_count": 3,
+    "fakeout_sl_pct": 75.0,
+    "profit_factor": 0.83,
+    "cumulative_net_pts": -25.4,
+    "avg_run_past_tp1_pts": 42.5,
+    "avg_run_past_tp1_atr": 1.89,
+    "max_run_past_tp1_pts": 71.6,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 5,
+        "win_rate": 60.0,
+        "net_pts": -39.3
+      },
+      {
+        "year": 2024,
+        "trades": 5,
+        "win_rate": 60.0,
+        "net_pts": 5.7
+      },
+      {
+        "year": 2025,
+        "trades": 2,
+        "win_rate": 50.0,
+        "net_pts": -32.3
+      },
+      {
+        "year": 2026,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 40.5
+      }
+    ]
+  },
+  {
+    "symbol": "SBIN",
+    "company": "SBIN",
+    "total_trades": 16,
+    "tp1_wins": 15,
+    "tp1_win_rate": 93.8,
+    "tp2_wins": 4,
+    "tp2_rate": 25.0,
+    "tp3_wins": 1,
+    "tp3_rate": 6.2,
+    "sl_hits": 1,
+    "sl_rate": 6.2,
+    "fakeout_sl_count": 0,
+    "fakeout_sl_pct": 0.0,
+    "profit_factor": 4.28,
+    "cumulative_net_pts": 70.3,
+    "avg_run_past_tp1_pts": 48.0,
+    "avg_run_past_tp1_atr": 3.8,
+    "max_run_past_tp1_pts": 158.8,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 7,
+        "win_rate": 85.7,
+        "net_pts": 12.3
+      },
+      {
+        "year": 2024,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 15.1
+      },
+      {
+        "year": 2025,
+        "trades": 4,
+        "win_rate": 100.0,
+        "net_pts": 27.4
+      },
+      {
+        "year": 2026,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 15.5
+      }
+    ]
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "company": "SUNPHARMA",
+    "total_trades": 12,
+    "tp1_wins": 9,
+    "tp1_win_rate": 75.0,
+    "tp2_wins": 4,
+    "tp2_rate": 33.3,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 3,
+    "sl_rate": 25.0,
+    "fakeout_sl_count": 0,
+    "fakeout_sl_pct": 0.0,
+    "profit_factor": 1.14,
+    "cumulative_net_pts": 20.0,
+    "avg_run_past_tp1_pts": 62.5,
+    "avg_run_past_tp1_atr": 2.23,
+    "max_run_past_tp1_pts": 206.6,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 3,
+        "win_rate": 100.0,
+        "net_pts": 27.0
+      },
+      {
+        "year": 2024,
+        "trades": 2,
+        "win_rate": 100.0,
+        "net_pts": 32.3
+      },
+      {
+        "year": 2025,
+        "trades": 3,
+        "win_rate": 66.7,
+        "net_pts": 2.8
+      },
+      {
+        "year": 2026,
+        "trades": 4,
+        "win_rate": 50.0,
+        "net_pts": -42.2
+      }
+    ]
+  },
+  {
+    "symbol": "TCS",
+    "company": "TCS",
+    "total_trades": 16,
+    "tp1_wins": 12,
+    "tp1_win_rate": 75.0,
+    "tp2_wins": 3,
+    "tp2_rate": 18.8,
+    "tp3_wins": 0,
+    "tp3_rate": 0.0,
+    "sl_hits": 4,
+    "sl_rate": 25.0,
+    "fakeout_sl_count": 2,
+    "fakeout_sl_pct": 50.0,
+    "profit_factor": 0.9,
+    "cumulative_net_pts": -45.3,
+    "avg_run_past_tp1_pts": 127.0,
+    "avg_run_past_tp1_atr": 1.9,
+    "max_run_past_tp1_pts": 225.1,
+    "yearly": [
+      {
+        "year": 2023,
+        "trades": 4,
+        "win_rate": 100.0,
+        "net_pts": 98.6
+      },
+      {
+        "year": 2024,
+        "trades": 9,
+        "win_rate": 77.8,
+        "net_pts": 16.8
+      },
+      {
+        "year": 2026,
+        "trades": 3,
+        "win_rate": 33.3,
+        "net_pts": -160.7
+      }
+    ]
+  }
+]

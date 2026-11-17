@@ -1,0 +1,27 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/venv/
+backend/__pycache__/
+*.log
+*.sqlite3
+
+# Node / React Native
+node_modules/
+mobile/node_modules/
+.expo/
+mobile/.expo/
+dist/
+mobile/dist/
+web-build/
+*.tsbuildinfo
+
+# System & Brain
+.system_generated/
+.user_uploaded/
+.DS_Store
+Thumbs.db

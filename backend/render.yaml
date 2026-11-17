@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: trading-ai-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        value: https://myqxkdptssxaatixdcng.supabase.co
+      - key: SUPABASE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cXhrZHB0c3N4YWF0aXhkY25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NzkyMDYsImV4cCI6MjEwODU1NTIwNn0.gHILT1NSxG8NXoAxXD0m1LL0bu6hst8SjpRlHNv8JM0
+
