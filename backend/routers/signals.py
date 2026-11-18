@@ -265,23 +265,24 @@ def _run_elite_scan_computation():
     all_5m_results = []
     all_1d_results = []
 
-    # 1. Parallel scan for 5M Intraday Scalps on active leaders
+    # Parallel scan with low worker count to prevent CPU/memory spikes on cloud dynos
     def _scan_5m(sym):
         return _evaluate_stock_setup(sym, interval="5m")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         evaluated_5m = list(executor.map(_scan_5m, INTRADAY_5M_UNIVERSE))
 
     for item in evaluated_5m:
         if item is not None and item.get('direction') != 'HOLD':
             all_5m_results.append(item)
 
-    # 2. Parallel scan for 1D Daily Setups across the broad market
     def _scan_1d(sym):
         return _evaluate_stock_setup(sym, interval="1d")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
-        evaluated_1d = list(executor.map(_scan_1d, universe))
+    # Limit broad market scan to top 50 active leaders to avoid overwhelming container
+    scan_universe = universe[:50] if len(universe) > 50 else universe
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        evaluated_1d = list(executor.map(_scan_1d, scan_universe))
 
     for item in evaluated_1d:
         if item is not None and item.get('direction') != 'HOLD':
@@ -340,13 +341,14 @@ def _run_elite_scan_computation():
     return response_payload
 
 def _background_scan_worker():
-    """Background loop that rescans the 500+ universe every 5 minutes."""
+    """Background loop that rescans active universe every 15 minutes (with delayed start to ensure fast boot)."""
+    time.sleep(180)  # Wait 3 minutes after boot before running first background scan
     while True:
         try:
             _run_elite_scan_computation()
         except Exception as e:
             print("[BACKGROUND SCANNER] Error:", e)
-        time.sleep(300)
+        time.sleep(900)  # Every 15 minutes
 
 # Start background scanner thread once
 _bg_thread = threading.Thread(target=_background_scan_worker, daemon=True)
