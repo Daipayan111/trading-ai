@@ -167,15 +167,15 @@ def _load_or_fetch_mcx_scrips() -> List[Dict[str, Any]]:
     """Loads MCX FUT contracts from local cache or fetches from Angel One URL."""
     os.makedirs(CACHE_DIR, exist_ok=True)
 
-    # Check if cached file exists and is less than 24h old
+    # Use local cached file immediately for instant sub-millisecond response
     if os.path.exists(SCRIP_MASTER_FILE):
-        file_age = time.time() - os.path.getmtime(SCRIP_MASTER_FILE)
-        if file_age < 86400:   # 24 hours
-            try:
-                with open(SCRIP_MASTER_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                pass
+        try:
+            with open(SCRIP_MASTER_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if data:
+                    return data
+        except Exception:
+            pass
 
     try:
         url = "https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json"

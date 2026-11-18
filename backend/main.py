@@ -338,6 +338,11 @@ async def live_price_broadcaster():
             
         await asyncio.sleep(1.0)
 
+@app.get("/ping")
+async def ping():
+    """Health check endpoint - keeps Render from sleeping"""
+    return {"status": "alive", "message": "TradingAI Pro is awake"}
+
 @app.on_event("startup")
 async def startup_event():
     # Start the real data synchronizer & 1-second live ticker broadcaster
@@ -358,6 +363,22 @@ async def startup_event():
         print("MCX commodity poller error:", e)
     # Start the Self-Evolving AI weekly training scheduler
     asyncio.create_task(ai_weekly_scheduler())
+    # Keep-alive self-ping every 10 minutes to prevent Render free tier from sleeping
+    asyncio.create_task(keep_alive_pinger())
+
+
+async def keep_alive_pinger():
+    """Self-ping every 10 minutes to prevent Render free tier cold start delays"""
+    import httpx
+    await asyncio.sleep(60)  # Wait 1 minute after startup
+    while True:
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                resp = await client.get("https://trading-ai-backend-z159.onrender.com/ping")
+                print(f">>> [KeepAlive] Ping OK: {resp.status_code}")
+        except Exception as e:
+            print(f">>> [KeepAlive] Ping failed (ok if dev): {e}")
+        await asyncio.sleep(600)  # Every 10 minutes
 
 
 async def ai_weekly_scheduler():

@@ -1,8 +1,14 @@
 from fastapi import APIRouter, HTTPException
 import yfinance as yf
 import pandas as pd
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 router = APIRouter()
+
+# In-memory instant cache for indices
+_indices_cache = {"data": None, "timestamp": 0}
+CACHE_TTL_SECONDS = 20
 
 # Yahoo Finance symbols for Indian market indices
 INDICES = {
@@ -46,9 +52,16 @@ def get_index_data(yf_symbol: str, period: str = "5d"):
 
 @router.get("/live")
 def get_all_indices_live():
-    """Get live data for all major Indian indices"""
+    """Get live data for all major Indian indices with instant in-memory cache"""
+    global _indices_cache
+    now = time.time()
+    if _indices_cache["data"] and (now - _indices_cache["timestamp"] < CACHE_TTL_SECONDS):
+        return _indices_cache["data"]
+
     results = []
-    for key, meta in INDICES.items():
+    
+    def _fetch_single_index(item):
+        key, meta = item
         try:
             ticker = yf.Ticker(meta["symbol"])
             fi = ticker.fast_info
@@ -62,7 +75,7 @@ def get_all_indices_live():
                 pc = prev_close if (prev_close and not pd.isna(prev_close)) else price
                 change = float(price) - float(pc)
                 change_pct = (change / float(pc)) * 100 if pc else 0.0
-                results.append({
+                return {
                     "id": key,
                     "name": meta["name"],
                     "symbol": meta["symbol"],
@@ -74,8 +87,7 @@ def get_all_indices_live():
                     "change": round(change, 2),
                     "change_pct": round(change_pct, 2),
                     "is_up": change >= 0,
-                })
-                continue
+                }
         except Exception:
             pass
 
@@ -87,7 +99,7 @@ def get_all_indices_live():
             change = float(latest["Close"]) - float(prev["Close"])
             change_pct = (change / float(prev["Close"])) * 100
 
-            results.append({
+            return {
                 "id": key,
                 "name": meta["name"],
                 "symbol": meta["symbol"],
@@ -99,17 +111,23 @@ def get_all_indices_live():
                 "change": round(change, 2),
                 "change_pct": round(change_pct, 2),
                 "is_up": change >= 0,
-            })
+            }
         except Exception as e:
-            results.append({
+            return {
                 "id": key,
                 "name": meta["name"],
                 "symbol": meta["symbol"],
                 "exchange": meta["exchange"],
                 "error": str(e),
-            })
+            }
 
-    return {"indices": results, "total": len(results)}
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = list(executor.map(_fetch_single_index, INDICES.items()))
+
+    payload = {"indices": results, "total": len(results)}
+    _indices_cache["data"] = payload
+    _indices_cache["timestamp"] = now
+    return payload
 
 
 @router.get("/{index_key}")
