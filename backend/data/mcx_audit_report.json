@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-11-19T09:37:40.782412",
+  "assets_analyzed": [
+    "CRUDEOIL",
+    "GOLD",
+    "SILVER",
+    "NATURALGAS",
+    "COPPER"
+  ],
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h",
+    "1d"
+  ],
+  "total_historical_bars_processed": 203467,
+  "labeled_instances": 203441,
+  "failure_modes_catalog": {
+    "total_baseline_buys": 47133,
+    "bull_traps_identified": 26239,
+    "bull_trap_percentage": 55.67,
+    "total_baseline_sells": 51515,
+    "bear_traps_identified": 26685,
+    "bear_trap_percentage": 51.8,
+    "explosive_big_moves_total": 24344,
+    "missed_big_moves_by_baseline": 10419,
+    "missed_big_move_percentage": 42.8,
+    "root_causes": [
+      "Upper Wick Rejection at Key Resistance during False Breakouts",
+      "Lower Wick Absorption / Hammer traps at Key Support",
+      "US Session High-Velocity algorithmic stop-runs (17:30 to 22:30 IST)",
+      "Low Volume Exhaustion (RVOL < 0.8) entering stagnant ranges",
+      "Bollinger Band squeezes breaking out dynamically away from static EOS/EOR"
+    ]
+  },
+  "anti_trap_model_metrics": {
+    "model_type": "HistGradientBoostingClassifier with RobustScaler",
+    "accuracy": 55.55,
+    "precision": 55.82,
+    "recall": 89.54,
+    "roc_auc": 56.13,
+    "traps_eliminated_pct": 89.54
+  },
+  "big_move_model_metrics": {
+    "model_type": "RandomForestClassifier (Balanced Weights)",
+    "accuracy": 88.13,
+    "precision": 49.88,
+    "recall": 100.0,
+    "roc_auc": 94.85,
+    "captured_big_moves_pct": 100.0
+  },
+  "feature_importance_top": [
+    {
+      "feature": "upper_wick_ratio",
+      "impact": "Prevents Bull Traps on fake high sweeps"
+    },
+    {
+      "feature": "lower_wick_ratio",
+      "impact": "Prevents Bear Traps on fake breakdown sweeps"
+    },
+    {
+      "feature": "displacement",
+      "impact": "Validates real directional body thrust"
+    },
+    {
+      "feature": "rvol",
+      "impact": "Separates institutional volume from retail traps"
+    },
+    {
+      "feature": "bb_squeeze",
+      "impact": "Pre-identifies impending big explosive expansions"
+    },
+    {
+      "feature": "us_session",
+      "impact": "Adjusts volatility margin during 5:30-11:00 PM IST"
+    },
+    {
+      "feature": "dist_to_res",
+      "impact": "Quantifies room to run before hitting resistance"
+    },
+    {
+      "feature": "dist_to_sup",
+      "impact": "Quantifies cushion above support"
+    }
+  ],
+  "status": "SUCCESS"
+}
