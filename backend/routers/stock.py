@@ -216,13 +216,19 @@ async def get_stock_history(symbol: str, period: str = "1y", interval: str = "1d
         return cached_res
 
     try:
-        # Auto-adjust period for intraday intervals to avoid Yahoo Finance 60-day limits
+        is_commodity = symbol.upper().replace(".NS", "").replace(".BO", "") in [
+            "CRUDEOIL", "CRUDEOILM", "GOLD", "GOLDM", "SILVER", "SILVERM", "NATURALGAS", "COPPER"
+        ]
+
+        # Auto-adjust period for intraday intervals to avoid Yahoo Finance 60-day limits & network bloat
         if interval == "1m":
             if period in ["1y", "2y", "5y", "max", "60d", "1mo", "1d", ""]:
                 period = "5d"
         elif interval in ["5m", "15m", "30m"]:
             if period in ["1y", "2y", "5y", "max"]:
-                period = "60d"
+                period = "15d" if is_commodity else "60d"
+            elif period == "60d" and is_commodity:
+                period = "15d"
         elif interval == "1h":
             if period in ["2y", "5y", "max"]:
                 period = "730d"
@@ -241,15 +247,16 @@ async def get_stock_history(symbol: str, period: str = "1y", interval: str = "1d
             or used_symbol.startswith("^")
             or symbol.upper() in ["BANKNIFTY", "NIFTY", "NIFTY50", "SENSEX", "FINNIFTY", "NIFTYIT"]
         )
-        is_commodity = symbol.upper().replace(".NS", "").replace(".BO", "") in [
-            "CRUDEOIL", "CRUDEOILM", "GOLD", "GOLDM", "SILVER", "SILVERM", "NATURALGAS", "COPPER"
-        ]
         cushion_mult = 0.35 if is_commodity else (0.45 if is_index else 0.30)
+
+        # Cap the output candles for lightning-fast payload transfer (< 150KB) and instant chart rendering (Groww / Angel One style)
+        max_output_candles = 600 if interval in ['1m', '5m', '15m', '30m'] else (800 if interval == '1h' else len(df))
+        start_idx = max(0, len(df) - max_output_candles)
 
         records = []
         last_signal_idx = -999
 
-        for i in range(len(df)):
+        for i in range(start_idx, len(df)):
             idx = df.index[i]
             row = df.iloc[i]
             signal_val = signals.iloc[i]['Signal']
