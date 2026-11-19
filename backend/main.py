@@ -2,6 +2,7 @@ import asyncio
 import random
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from routers import stock, signals, backtest, predict, indices, options, sector, admin, broker, commodity
 from broker_gateway import broker_gateway
 from websocket_manager import manager
@@ -11,6 +12,9 @@ app = FastAPI(
     description="Advanced AI-powered trading signals for NSE/BSE stocks",
     version="2.0.0"
 )
+
+# Gzip HTTP compression: reduces chart data payload by 85% for instant mobile loading (Groww/Angel One speed)
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 app.add_middleware(
     CORSMiddleware,

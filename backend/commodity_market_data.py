@@ -47,7 +47,7 @@ MCX_COMMODITIES = {
         "color":         "#F97316",
         "token":         "573422",
         "tradingsymbol": "CRUDEOIL19NOV26FUT",
-        "baseline_ltp":  7804.0,
+        "baseline_ltp":  7774.0,
     },
     "CRUDEOILM": {
         "symbol":        "CRUDEOILM",
@@ -59,7 +59,7 @@ MCX_COMMODITIES = {
         "color":         "#FB923C",
         "token":         "573423",
         "tradingsymbol": "CRUDEOILM19NOV26FUT",
-        "baseline_ltp":  7808.0,
+        "baseline_ltp":  7774.0,
     },
     "GOLD": {
         "symbol":        "GOLD",
@@ -367,12 +367,10 @@ def refresh_commodity_prices() -> None:
 
 
 def get_commodity_prices() -> Dict[str, Dict[str, Any]]:
-    """Return current cached prices, refreshing if empty."""
+    """Return current cached prices instantly (< 1ms), refreshing in background if needed."""
     with _cache_lock:
-        if _commodity_cache:
-            return dict(_commodity_cache)
-    refresh_commodity_prices()
-    with _cache_lock:
+        if not _commodity_cache:
+            _populate_baselines_if_empty()
         return dict(_commodity_cache)
 
 

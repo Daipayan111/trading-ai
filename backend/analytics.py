@@ -31,26 +31,38 @@ INDEX_MAPPING = {
 }
 
 COMMODITY_MAPPING = {
-    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 7804.0},
-    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 7808.0},
+    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 7774.0},
+    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 7774.0},
     "GOLD":       {"yf": "GC=F", "name": "Gold",             "base_price": 129125.0},
-    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 129200.0},
-    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 160409.0},
-    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 161558.0},
-    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 312.5},
-    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1197.6},
+    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 129180.0},
+    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 162400.0},
+    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 162500.0},
+    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 278.40},
+    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1184.50},
 }
 
 def _generate_synthetic_mcx_bars(symbol: str, target_ltp: float, period: str = "60d", interval: str = "5m") -> pd.DataFrame:
     """Generate high-fidelity realistic MCX OHLCV bars when external feed is offline"""
     import random
-    bars_count = 60 if interval in ["1m", "5m", "15m"] else 120
-    freq_map = {"1m": "1min", "5m": "5min", "15m": "15min", "1h": "1h", "1d": "1D"}
+    if period in ["5y", "max"] or interval in ["1wk", "1mo"]:
+        bars_count = 1250 if interval == "1d" else 300
+    elif period in ["1y", "2y"] or interval == "1d":
+        bars_count = 250
+    elif interval in ["1h"]:
+        bars_count = 350
+    elif interval in ["15m"]:
+        bars_count = 250
+    elif interval in ["5m"]:
+        bars_count = 300
+    else:
+        bars_count = 180
+
+    freq_map = {"1m": "1min", "5m": "5min", "15m": "15min", "1h": "1h", "1d": "1D", "1wk": "1W"}
     freq = freq_map.get(interval, "5min")
     end_time = pd.Timestamp.now(tz="Asia/Kolkata").floor("min")
     dates = pd.date_range(end=end_time, periods=bars_count, freq=freq)
     
-    volatility = 0.003 if interval in ["1m", "5m"] else 0.008
+    volatility = 0.0025 if interval in ["1m", "5m"] else (0.006 if interval in ["15m", "1h"] else 0.012)
     prices = [target_ltp]
     for _ in range(bars_count - 1):
         ret = random.gauss(0, volatility)
