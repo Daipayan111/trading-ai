@@ -232,10 +232,8 @@ async def get_stock_history(
             if period in ["1y", "2y", "5y", "max", "60d", "1mo", "1d", ""]:
                 period = "5d"
         elif interval in ["5m", "15m", "30m"]:
-            if period in ["1y", "2y", "5y", "max"]:
-                period = "15d" if is_commodity else "60d"
-            elif period == "60d" and is_commodity:
-                period = "15d"
+            if period in ["1y", "2y", "5y", "max", "60d"]:
+                period = "60d"
         elif interval == "1h":
             if period in ["2y", "5y", "max"]:
                 period = "730d"
@@ -309,10 +307,12 @@ async def get_stock_history(
         # Cap output candles based on requested range & limit (Groww / Angel One multi-year capability)
         if period in ['5y', 'max'] and interval in ['1d', '1wk', '1mo']:
             max_output_candles = min(1500, limit)
-        elif interval in ['1m', '5m', '15m', '30m']:
-            max_output_candles = min(600, limit)
+        elif interval in ['5m', '15m', '30m']:
+            max_output_candles = min(2500, limit)
+        elif interval == '1m':
+            max_output_candles = min(1000, limit)
         elif interval == '1h':
-            max_output_candles = min(800, limit)
+            max_output_candles = min(1200, limit)
         else:
             max_output_candles = min(len(df), limit)
         start_idx = max(0, len(df) - max_output_candles)
