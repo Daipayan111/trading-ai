@@ -47,7 +47,7 @@ MCX_COMMODITIES = {
         "color":         "#F97316",
         "token":         "573422",
         "tradingsymbol": "CRUDEOIL19NOV26FUT",
-        "baseline_ltp":  8369.0,
+        "baseline_ltp":  7804.0,
     },
     "CRUDEOILM": {
         "symbol":        "CRUDEOILM",
@@ -59,7 +59,7 @@ MCX_COMMODITIES = {
         "color":         "#FB923C",
         "token":         "573423",
         "tradingsymbol": "CRUDEOILM19NOV26FUT",
-        "baseline_ltp":  8375.0,
+        "baseline_ltp":  7808.0,
     },
     "GOLD": {
         "symbol":        "GOLD",
@@ -71,7 +71,7 @@ MCX_COMMODITIES = {
         "color":         "#EAB308",
         "token":         "495213",
         "tradingsymbol": "GOLD04DEC26FUT",
-        "baseline_ltp":  136705.0,
+        "baseline_ltp":  129125.0,
     },
     "GOLDM": {
         "symbol":        "GOLDM",
@@ -83,7 +83,7 @@ MCX_COMMODITIES = {
         "color":         "#CA8A04",
         "token":         "575011",
         "tradingsymbol": "GOLDM04DEC26FUT",
-        "baseline_ltp":  136764.0,
+        "baseline_ltp":  129200.0,
     },
     "SILVER": {
         "symbol":        "SILVER",
@@ -95,7 +95,7 @@ MCX_COMMODITIES = {
         "color":         "#94A3B8",
         "token":         "495214",
         "tradingsymbol": "SILVER04DEC26FUT",
-        "baseline_ltp":  176309.0,
+        "baseline_ltp":  160409.0,
     },
     "SILVERM": {
         "symbol":        "SILVERM",
@@ -107,7 +107,7 @@ MCX_COMMODITIES = {
         "color":         "#64748B",
         "token":         "483080",
         "tradingsymbol": "SILVERM30NOV26FUT",
-        "baseline_ltp":  178148.0,
+        "baseline_ltp":  161558.0,
     },
     "NATURALGAS": {
         "symbol":        "NATURALGAS",
@@ -119,7 +119,7 @@ MCX_COMMODITIES = {
         "color":         "#3B82F6",
         "token":         "574319",
         "tradingsymbol": "NATURALGAS24NOV26FUT",
-        "baseline_ltp":  308.0,
+        "baseline_ltp":  312.5,
     },
     "COPPER": {
         "symbol":        "COPPER",
@@ -131,7 +131,7 @@ MCX_COMMODITIES = {
         "color":         "#B45309",
         "token":         "578634",
         "tradingsymbol": "COPPER30NOV26FUT",
-        "baseline_ltp":  1308.4,
+        "baseline_ltp":  1197.6,
     },
 }
 

@@ -31,14 +31,14 @@ INDEX_MAPPING = {
 }
 
 COMMODITY_MAPPING = {
-    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 8369.0},
-    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 8375.0},
-    "GOLD":       {"yf": "GC=F", "name": "Gold",             "base_price": 136705.0},
-    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 136764.0},
-    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 176309.0},
-    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 178148.0},
-    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 308.0},
-    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1308.4},
+    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 7804.0},
+    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 7808.0},
+    "GOLD":       {"yf": "GC=F", "name": "Gold",             "base_price": 129125.0},
+    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 129200.0},
+    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 160409.0},
+    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 161558.0},
+    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 312.5},
+    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1197.6},
 }
 
 def _generate_synthetic_mcx_bars(symbol: str, target_ltp: float, period: str = "60d", interval: str = "5m") -> pd.DataFrame:
@@ -126,6 +126,11 @@ def fetch_stock_data(symbol: str, period: str = "1y", interval: str = "1d"):
                     df['Adj Close'] = df['Close']
             df.index = pd.to_datetime(df.index)
             df = df.dropna()
+            # Synchronize the latest candle with live MCX target_ltp
+            if target_ltp > 0 and len(df) > 0:
+                df.iloc[-1, df.columns.get_loc('Close')] = round(target_ltp, 2)
+                df.iloc[-1, df.columns.get_loc('High')] = max(float(df.iloc[-1]['High']), round(target_ltp, 2))
+                df.iloc[-1, df.columns.get_loc('Low')] = min(float(df.iloc[-1]['Low']), round(target_ltp, 2))
             market_cache.set(cache_key_fast, (df.copy(), clean_sym, ticker), ttl=45.0 if interval in ['1m', '5m', '15m'] else 300.0)
             _DATA_CACHE[cache_key] = (df.copy(), clean_sym, ticker)
             return df, clean_sym, ticker
