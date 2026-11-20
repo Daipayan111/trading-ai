@@ -248,8 +248,8 @@ async def get_stock_history(
         if df.empty or len(df) < 5:
             if is_commodity:
                 from analytics import _generate_synthetic_mcx_bars, COMMODITY_MAPPING
-                meta = COMMODITY_MAPPING.get(clean_sym, {"base_price": 7774.0})
-                df = _generate_synthetic_mcx_bars(clean_sym, meta["base_price"], period, interval)
+                meta = COMMODITY_MAPPING.get(clean_sym, {"base_price": 7727.0})
+                df = _generate_synthetic_mcx_bars(clean_sym, meta.get("base_price", 7727.0), period, interval)
                 used_symbol = clean_sym
             else:
                 try:
@@ -259,8 +259,9 @@ async def get_stock_history(
                     used_symbol = clean_sym
 
         if df.empty or len(df) < 5:
-            from analytics import _generate_synthetic_mcx_bars
-            df = _generate_synthetic_mcx_bars(clean_sym, 7774.0 if is_commodity else 2500.0, period, interval)
+            from analytics import _generate_synthetic_mcx_bars, COMMODITY_MAPPING
+            base_p = COMMODITY_MAPPING.get(clean_sym, {}).get("base_price", 7727.0) if is_commodity else 2500.0
+            df = _generate_synthetic_mcx_bars(clean_sym, base_p, period, interval)
             used_symbol = clean_sym
 
         # Infinite Scrollback pagination filter
@@ -836,8 +837,9 @@ async def get_stock_history(
     except Exception as e:
         print("STOCK API ERROR:", e)
         # Resilient fallback: return realistic candles so chart never crashes (100% uptime)
-        from analytics import _generate_synthetic_mcx_bars
-        fb_df = _generate_synthetic_mcx_bars(clean_sym, 7774.0 if is_commodity else 2500.0, period, interval)
+        from analytics import _generate_synthetic_mcx_bars, COMMODITY_MAPPING
+        base_p = COMMODITY_MAPPING.get(clean_sym, {}).get("base_price", 7727.0) if is_commodity else 2500.0
+        fb_df = _generate_synthetic_mcx_bars(clean_sym, base_p, period, interval)
         records = []
         for idx, row in fb_df.iterrows():
             records.append({
