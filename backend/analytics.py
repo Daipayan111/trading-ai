@@ -31,14 +31,14 @@ INDEX_MAPPING = {
 }
 
 COMMODITY_MAPPING = {
-    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 7727.0},
-    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 7727.0},
-    "GOLD":       {"yf": "GC=F", "name": "Gold",             "base_price": 77450.0},
-    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 77480.0},
-    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 151033.0},
-    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 151033.0},
-    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 278.40},
-    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1184.50},
+    "CRUDEOIL":   {"yf": "CL=F", "name": "Crude Oil",        "base_price": 7587.0},
+    "CRUDEOILM":  {"yf": "CL=F", "name": "Crude Oil Mini",   "base_price": 7580.0},
+    "GOLD":       {"yf": "GC=F", "name": "Gold",             "base_price": 123337.0},
+    "GOLDM":      {"yf": "GC=F", "name": "Gold Mini",        "base_price": 123400.0},
+    "SILVER":     {"yf": "SI=F", "name": "Silver",           "base_price": 151908.0},
+    "SILVERM":    {"yf": "SI=F", "name": "Silver Mini",      "base_price": 152682.0},
+    "NATURALGAS": {"yf": "NG=F", "name": "Natural Gas",      "base_price": 293.70},
+    "COPPER":     {"yf": "HG=F", "name": "Copper",           "base_price": 1165.10},
 }
 
 def _generate_synthetic_mcx_bars(symbol: str, target_ltp: float, period: str = "60d", interval: str = "5m") -> pd.DataFrame:
@@ -65,7 +65,6 @@ def _generate_synthetic_mcx_bars(symbol: str, target_ltp: float, period: str = "
     now = pd.Timestamp.now(tz="Asia/Kolkata")
 
     if interval == "1d":
-        # Generate daily business days
         dates = pd.bdate_range(end=now.date(), periods=bars_count)
         dates = pd.to_datetime(dates).tz_localize("Asia/Kolkata")
     else:
@@ -98,80 +97,14 @@ def _generate_synthetic_mcx_bars(symbol: str, target_ltp: float, period: str = "
         dts.reverse()
         dates = pd.DatetimeIndex(dts)
 
-    volatility = 0.0018 if interval in ["1m", "5m"] else (0.004 if interval in ["15m", "1h"] else 0.009)
-    today_date = now.date()
-    yesterday_date = today_date - datetime.timedelta(days=3 if today_date.weekday() == 0 else 1)
-
-    prices = []
-    for dt in dates:
-        d = dt.date()
-        h = dt.hour
-        m = dt.minute
-
-        # Realistic exchange-calibrated path for active commodities
-        if clean_sym in ["CRUDEOIL", "CRUDEOILM"]:
-            if d == today_date:
-                # Nov 20: Open ~7742, morning dip to 7703.86 around 10:30, rebound to 7727
-                if h < 10 or (h == 10 and m <= 30):
-                    frac = ((h - 9) * 60 + m) / 90.0
-                    base_p = 7742.0 - (7742.0 - 7703.86) * min(1.0, frac)
-                else:
-                    frac = ((h - 10) * 60 + (m - 30)) / 90.0
-                    base_p = 7703.86 + (target_ltp - 7703.86) * min(1.0, frac)
-            elif d == yesterday_date:
-                # Nov 19: Range 7800-7860, M-top peak ~7860 at 19:00, evening plunge to 7740 close
-                if h < 19:
-                    frac = ((h - 9) * 60 + m) / 600.0
-                    base_p = 7800.0 + 60.0 * min(1.0, frac)
-                else:
-                    frac = ((h - 19) * 60 + m) / 270.0
-                    base_p = 7860.0 - 120.0 * min(1.0, frac)
-            else:
-                base_p = 7820.0 + random.uniform(-100, 150)
-
-        elif clean_sym in ["SILVER", "SILVERM"]:
-            if d == today_date:
-                # Nov 20: Gap down open at 150,871 (from 158,000 close), dip to 147,000 at 10:30, rally to 151,033
-                if h < 10 or (h == 10 and m <= 30):
-                    frac = ((h - 9) * 60 + m) / 90.0
-                    base_p = 150871.0 - (150871.0 - 147000.0) * min(1.0, frac)
-                else:
-                    frac = ((h - 10) * 60 + (m - 30)) / 90.0
-                    base_p = 147000.0 + (target_ltp - 147000.0) * min(1.0, frac)
-            elif d == yesterday_date:
-                # Nov 19: Evening at 162k down to 158k close
-                if h < 19:
-                    base_p = 162500.0 + random.uniform(-500, 500)
-                else:
-                    frac = ((h - 19) * 60 + m) / 270.0
-                    base_p = 162000.0 - 4000.0 * min(1.0, frac)
-            else:
-                base_p = 161000.0 + random.uniform(-2000, 2500)
-
-        elif clean_sym in ["GOLD", "GOLDM"]:
-            if d == today_date:
-                # Nov 20: Open 77,420, dip to 77,200, rally to 77,450
-                if h < 10 or (h == 10 and m <= 30):
-                    frac = ((h - 9) * 60 + m) / 90.0
-                    base_p = 77420.0 - 220.0 * min(1.0, frac)
-                else:
-                    frac = ((h - 10) * 60 + (m - 30)) / 90.0
-                    base_p = 77200.0 + (target_ltp - 77200.0) * min(1.0, frac)
-            elif d == yesterday_date:
-                base_p = 77800.0 - (77800.0 - 77480.0) * min(1.0, ((h - 9) * 60 + m) / 870.0)
-            else:
-                base_p = 77200.0 + random.uniform(-500, 800)
-        else:
-            base_p = target_ltp * (1.0 + random.uniform(-0.02, 0.02))
-
-        # Add minor random gaussian jitter to baseline
-        noise = random.gauss(0, base_p * (volatility * 0.4))
-        p = round(base_p + noise, 2)
-        prices.append(p)
-
-    # Ensure final price matches target_ltp exactly
-    if prices:
-        prices[-1] = round(target_ltp, 2)
+    # Continuous Geometric Brownian Motion (natural, organic walk backwards from live target_ltp)
+    volatility = 0.0022 if interval in ["1m", "5m"] else (0.0045 if interval in ["15m", "1h"] else 0.010)
+    prices = [target_ltp]
+    for _ in range(len(dates) - 1):
+        ret = random.gauss(0, volatility)
+        prev_p = prices[-1] / (1 + ret)
+        prices.append(prev_p)
+    prices.reverse()
 
     rows = []
     for i, p in enumerate(prices):
@@ -207,6 +140,7 @@ def fetch_stock_data(symbol: str, period: str = "1y", interval: str = "1d"):
     if clean_sym in COMMODITY_MAPPING:
         cache_key = (clean_sym, interval)
         meta = COMMODITY_MAPPING[clean_sym]
+        yf_sym = meta["yf"]
 
         # Get current real target LTP in INR
         target_ltp = meta["base_price"]
@@ -218,9 +152,59 @@ def fetch_stock_data(symbol: str, period: str = "1y", interval: str = "1d"):
         except Exception:
             pass
 
-        # High-Fidelity Indian MCX Exchange Bars (strict 09:00 - 23:30 session hours, zero overnight bars)
+        # 1. First, attempt to fetch real market candles from Yahoo Finance
+        df = pd.DataFrame()
+        ticker = None
+        try:
+            ticker = yf.Ticker(yf_sym)
+            yf_period = period
+            if interval in ["1m", "5m"]:
+                yf_period = "5d" if period in ["", "1d", "5d", "7d"] else period
+            elif interval in ["15m", "30m"]:
+                yf_period = "1mo" if period in ["", "1d", "5d", "7d", "60d"] else period
+            df = ticker.history(period=yf_period, interval=interval, timeout=6)
+        except Exception:
+            df = pd.DataFrame()
+
+        if not df.empty and len(df) >= 5:
+            # Standardize timezone to Asia/Kolkata
+            df.index = pd.to_datetime(df.index)
+            if df.index.tz is None:
+                df.index = df.index.tz_localize("UTC").tz_convert("Asia/Kolkata")
+            else:
+                df.index = df.index.tz_convert("Asia/Kolkata")
+
+            # Filter strictly for Indian MCX session trading hours (09:00 - 23:30 Mon-Fri)
+            if interval in ["1m", "5m", "15m", "30m", "1h"]:
+                h = df.index.hour
+                m = df.index.minute
+                in_mcx = (df.index.weekday < 5) & ((h > 9) | ((h == 9) & (m >= 0))) & ((h < 23) | ((h == 23) & (m <= 30)))
+                df = df[in_mcx]
+
+            if not df.empty and len(df) >= 5:
+                latest_c = float(df['Close'].iloc[-1])
+                if latest_c > 0 and target_ltp > 0:
+                    scale = target_ltp / latest_c
+                    for col in ['Open', 'High', 'Low', 'Close']:
+                        df[col] = (df[col] * scale).round(2)
+                    if 'Adj Close' in df.columns:
+                        df['Adj Close'] = df['Close']
+                    df.iloc[-1, df.columns.get_loc('Close')] = round(target_ltp, 2)
+                    df.iloc[-1, df.columns.get_loc('High')] = max(float(df.iloc[-1]['High']), round(target_ltp, 2))
+                    df.iloc[-1, df.columns.get_loc('Low')] = min(float(df.iloc[-1]['Low']), round(target_ltp, 2))
+                df = df.dropna()
+                market_cache.set(cache_key_fast, (df.copy(), clean_sym, ticker), ttl=20.0 if interval in ['1m', '5m', '15m'] else 120.0)
+                _DATA_CACHE[cache_key] = (df.copy(), clean_sym, ticker)
+                return df, clean_sym, ticker
+
+        # Fallback to realistic synthetic bars if yfinance is unreachable
+        if cache_key in _DATA_CACHE:
+            cached_df, cached_sym, cached_ticker = _DATA_CACHE[cache_key]
+            if not cached_df.empty:
+                return cached_df.copy(), cached_sym, cached_ticker
+
         df = _generate_synthetic_mcx_bars(clean_sym, target_ltp, period, interval)
-        market_cache.set(cache_key_fast, (df.copy(), clean_sym, None), ttl=30.0 if interval in ['1m', '5m', '15m'] else 180.0)
+        market_cache.set(cache_key_fast, (df.copy(), clean_sym, None), ttl=20.0 if interval in ['1m', '5m', '15m'] else 120.0)
         _DATA_CACHE[cache_key] = (df.copy(), clean_sym, None)
         return df, clean_sym, None
 

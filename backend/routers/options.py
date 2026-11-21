@@ -163,14 +163,14 @@ def get_current_spot_data(symbol: str) -> Dict[str, Any]:
         "HDFCBANK": {"price": 1780.00, "change": 15.60, "change_pct": 0.88},
         "ICICIBANK": {"price": 1310.00, "change": 12.40, "change_pct": 0.96},
         "SBIN": {"price": 845.00, "change": 5.10, "change_pct": 0.61},
-        "CRUDEOIL": {"price": 7727.00, "change": -13.00, "change_pct": -0.17},
-        "CRUDEOILM": {"price": 7727.00, "change": -13.00, "change_pct": -0.17},
-        "GOLD": {"price": 77450.00, "change": 120.00, "change_pct": 0.15},
-        "GOLDM": {"price": 77480.00, "change": 120.00, "change_pct": 0.15},
-        "SILVER": {"price": 151033.00, "change": 155.00, "change_pct": 0.10},
-        "SILVERM": {"price": 151033.00, "change": 155.00, "change_pct": 0.10},
-        "NATURALGAS": {"price": 278.40, "change": 1.20, "change_pct": 0.43},
-        "COPPER": {"price": 1184.50, "change": 3.10, "change_pct": 0.26},
+        "CRUDEOIL": {"price": 7587.00, "change": -220.00, "change_pct": -2.82},
+        "CRUDEOILM": {"price": 7580.00, "change": -227.00, "change_pct": -2.91},
+        "GOLD": {"price": 123337.00, "change": -4115.00, "change_pct": -3.23},
+        "GOLDM": {"price": 123400.00, "change": -4099.00, "change_pct": -3.21},
+        "SILVER": {"price": 151908.00, "change": -5574.00, "change_pct": -3.54},
+        "SILVERM": {"price": 152682.00, "change": -6050.00, "change_pct": -3.81},
+        "NATURALGAS": {"price": 293.70, "change": -14.80, "change_pct": -4.80},
+        "COPPER": {"price": 1165.10, "change": -28.50, "change_pct": -2.39},
     }
     return defaults.get(clean, {"price": 25299.35, "change": 60.85, "change_pct": 0.24})
 
