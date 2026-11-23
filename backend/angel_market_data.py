@@ -23,6 +23,26 @@ from supabase_db import db_manager
 
 logger = logging.getLogger("AngelMarketData")
 
+
+class _RedactBrokerRequestDetails(logging.Filter):
+    """Prevent the SmartAPI client's error logger from writing credentials/JWT headers."""
+    SENSITIVE_MARKERS = ("Headers:", "X-PrivateKey", "Authorization", "jwtToken", "feedToken")
+
+    def filter(self, record):
+        message = record.getMessage()
+        if any(marker.lower() in message.lower() for marker in self.SENSITIVE_MARKERS):
+            record.msg = "Angel One request failed; sensitive request details were redacted."
+            record.args = ()
+        return True
+
+
+try:
+    # SmartApi imports logzero.logger and logs full request headers on transport errors.
+    import logzero
+    logzero.logger.addFilter(_RedactBrokerRequestDetails())
+except Exception:
+    pass
+
 # Top NSE instrument tokens for Angel One SmartAPI
 ANGEL_SYMBOL_TOKENS = {
     "NIFTY": {"exchange": "NSE", "symbol": "Nifty 50", "token": "99926000", "clean": "NIFTY", "key": "^NSEI"},
@@ -48,13 +68,16 @@ class AngelMarketDataService:
         self.last_sync_time = 0
         self.worker_thread = None
         self.running = False
+        self._auto_login_started = False
         self._load_saved_config()
-        self.auto_connect_if_saved()
 
     def auto_connect_if_saved(self):
         """Auto connects to Angel One SmartAPI if enabled in database"""
         self._load_saved_config()
+        if self.is_connected or self._auto_login_started:
+            return
         if self.enabled and self.api_key and self.client_code and self.pin:
+            self._auto_login_started = True
             threading.Thread(target=self._run_auto_login, daemon=True).start()
 
     def renew_token_if_invalid(self):

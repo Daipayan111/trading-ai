@@ -50,23 +50,29 @@ async def get_market_status():
 
 @router.get("/list")
 async def get_commodity_list():
-    """Returns all MCX commodities with live LTP, change%, metadata."""
-    from commodity_market_data import get_commodity_prices, MCX_COMMODITIES, get_market_status
+    """Returns Angel One MCX quotes or an explicit unavailable state."""
+    from commodity_market_data import get_commodity_prices, MCX_COMMODITIES, get_market_status, quote_status
 
     prices = get_commodity_prices()
     market_status = get_market_status()
+    try:
+        from angel_market_data import angel_data_service
+        feed_connected = bool(angel_data_service.is_connected)
+    except Exception:
+        feed_connected = False
 
     result = []
     for sym, meta in MCX_COMMODITIES.items():
         price_data = prices.get(sym, {})
-        ltp        = price_data.get("ltp", 0.0)
-        change     = price_data.get("change", 0.0)
-        change_pct = price_data.get("change_pct", 0.0)
-        volume     = price_data.get("volume", 0)
-        high       = price_data.get("high", ltp)
-        low        = price_data.get("low", ltp)
-        open_      = price_data.get("open", ltp)
-        source     = price_data.get("source", "none")
+        available  = price_data.get("source") == "angel_live"
+        status     = quote_status(price_data)
+        ltp        = price_data.get("ltp") if available else None
+        change     = price_data.get("change") if available else None
+        change_pct = price_data.get("change_pct") if available else None
+        volume     = price_data.get("volume") if available else None
+        high       = price_data.get("high") if available else None
+        low        = price_data.get("low") if available else None
+        open_      = price_data.get("open") if available else None
 
         result.append({
             "symbol":      sym,
@@ -82,14 +88,21 @@ async def get_commodity_list():
             "low":         low,
             "change":      change,
             "change_pct":  change_pct,
-            "is_up":       change >= 0,
+            "is_up":       change >= 0 if change is not None else None,
             "volume":      volume,
-            "data_source": source,
+            "data_source": "angel_one" if available else "unavailable",
+            "is_live":     status["is_live"],
+            "quote_status": status["quote_status"],
+            "quote_age_seconds": status["quote_age_seconds"],
+            "quote_timestamp": price_data.get("exchange_timestamp") if available else None,
+            "retrieved_at":    price_data.get("timestamp") if available else None,
             "token":       meta.get("token"),
+            "contract":    meta.get("tradingsymbol"),
         })
 
     return {
         "market_status": market_status,
+        "feed_connected": feed_connected,
         "count":         len(result),
         "commodities":   result,
         "updated_at":    datetime.datetime.now(IST).isoformat(),
@@ -103,14 +116,14 @@ async def get_commodity_list():
 @router.get("/price/{symbol}")
 async def get_commodity_price(symbol: str):
     """Live price for a single MCX commodity."""
-    from commodity_market_data import get_commodity_price, MCX_COMMODITIES
+    from commodity_market_data import get_commodity_price, MCX_COMMODITIES, quote_status
     sym = symbol.upper()
     if sym not in MCX_COMMODITIES:
         raise HTTPException(status_code=404, detail=f"Commodity '{symbol}' not found. Available: {list(MCX_COMMODITIES.keys())}")
     data = get_commodity_price(sym)
-    if not data:
-        raise HTTPException(status_code=503, detail="Price data unavailable — backend fetching")
-    return data
+    if not data or data.get("source") != "angel_live":
+        raise HTTPException(status_code=503, detail="Authenticated Angel One MCX quote unavailable")
+    return {**data, **quote_status(data)}
 
 
 # ---------------------------------------------------------------------------
@@ -290,8 +303,8 @@ async def get_commodity_options(symbol: str):
         raise HTTPException(status_code=404, detail=f"Unknown commodity: {symbol}")
 
     price_data = get_commodity_price(sym)
-    if not price_data or not price_data.get("ltp"):
-        return {"symbol": sym, "chain": [], "note": "Live price unavailable — options chain requires live LTP"}
+    if not price_data or price_data.get("source") != "angel_live" or not price_data.get("ltp"):
+        return {"symbol": sym, "chain": [], "note": "Authenticated MCX quote unavailable — options chain is paused", "data_source": "unavailable"}
 
     ltp = price_data["ltp"]
     # Build theoretical chain (Black-Scholes based)
@@ -374,8 +387,10 @@ async def get_commodity_ltp_calculator(symbol: str):
         raise HTTPException(status_code=404, detail=f"Commodity '{symbol}' not found. Available: {list(MCX_COMMODITIES.keys())}")
 
     price_data = get_commodity_price(sym)
+    if not price_data or price_data.get("source") != "angel_live":
+        raise HTTPException(status_code=503, detail="Authenticated Angel One MCX quote unavailable")
     meta = MCX_COMMODITIES[sym]
-    ltp = float(price_data.get("ltp") or meta["baseline_ltp"])
+    ltp = float(price_data["ltp"])
 
     # Compute Supercharged LTP Calculator metrics
     ltp_calc = build_commodity_ltp_calculator(sym, ltp)

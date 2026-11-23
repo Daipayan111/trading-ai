@@ -14,7 +14,7 @@ import math
 import random
 from datetime import datetime, timedelta
 from typing import Dict, Any, List
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from analytics_ltp_calculator import compute_supercharged_ltp_calculator
 from fast_cache import options_cache
 
@@ -95,6 +95,20 @@ def get_current_spot_data(symbol: str) -> Dict[str, Any]:
     """Fetch live price and change from instrument_states or realistic fallbacks"""
     clean = symbol.upper().replace(".NS", "").replace("^", "")
     target_key = SYMBOL_ALIASES.get(clean, SYMBOL_ALIASES.get(symbol.upper(), symbol))
+
+    if clean in {"CRUDEOIL", "CRUDEOILM", "GOLD", "GOLDM", "SILVER", "SILVERM", "NATURALGAS", "COPPER"}:
+        try:
+            from commodity_market_data import get_commodity_price
+            quote = get_commodity_price(clean)
+            if quote and quote.get("source") == "angel_live":
+                return {
+                    "price": float(quote["ltp"]),
+                    "change": float(quote.get("change") or 0),
+                    "change_pct": float(quote.get("change_pct") or 0),
+                }
+        except Exception:
+            pass
+        return {"price": None, "change": None, "change_pct": None}
 
     try:
         from main import instrument_states
@@ -206,6 +220,8 @@ def get_options_chain(symbol: str, count: int = 71, expiry: str = None):
     if cached_chain is not None:
         return cached_chain
     spot_info = get_current_spot_data(clean_sym)
+    if spot_info.get("price") is None:
+        raise HTTPException(status_code=503, detail="Authenticated MCX quote unavailable; option-chain calculation is paused")
     spot = spot_info["price"]
     spot_change = spot_info["change"]
     spot_change_pct = spot_info["change_pct"]

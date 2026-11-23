@@ -472,9 +472,16 @@ def predict_stock(symbol: str, interval: str = "1d"):
     """
     clean_sym = symbol.strip().upper().replace(".NS", "").replace(".BO", "")
     cache_key = f"predict_res:{clean_sym}:{interval}"
-    cached_pred = predict_cache.get(cache_key)
-    if cached_pred is not None:
-        return cached_pred
+    commodity_symbols = {"CRUDEOIL", "CRUDEOILM", "GOLD", "GOLDM", "SILVER", "SILVERM", "NATURALGAS", "COPPER"}
+    if clean_sym in commodity_symbols:
+        from commodity_market_data import get_commodity_price
+        quote = get_commodity_price(clean_sym)
+        if not quote or quote.get("source") != "angel_live":
+            raise HTTPException(status_code=503, detail="Authenticated MCX quote unavailable; prediction is paused")
+    else:
+        cached_pred = predict_cache.get(cache_key)
+        if cached_pred is not None:
+            return cached_pred
 
     try:
         # ── Step 1: Data Fetching ──────────────────────────────

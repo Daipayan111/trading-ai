@@ -181,6 +181,35 @@ async def search_stocks(q: str = ""):
 async def get_stock_quote(symbol: str):
     """Get real-time quote for a stock"""
     try:
+        clean_symbol = symbol.upper().replace(".NS", "").replace(".BO", "")
+        if clean_symbol in {"CRUDEOIL", "CRUDEOILM", "GOLD", "GOLDM", "SILVER", "SILVERM", "NATURALGAS", "COPPER"}:
+            from commodity_market_data import MCX_COMMODITIES, get_commodity_price, quote_status
+            quote = get_commodity_price(clean_symbol)
+            if not quote or quote.get("source") != "angel_live":
+                return {
+                    "symbol": clean_symbol,
+                    "name": MCX_COMMODITIES[clean_symbol]["name"],
+                    "price": None,
+                    "change": None,
+                    "change_pct": None,
+                    "data_source": "unavailable",
+                    **quote_status(None),
+                }
+            return {
+                "symbol": clean_symbol,
+                "name": MCX_COMMODITIES[clean_symbol]["name"],
+                "price": quote["ltp"],
+                "open": quote.get("open"),
+                "high": quote.get("high"),
+                "low": quote.get("low"),
+                "volume": quote.get("volume"),
+                "change": quote.get("change"),
+                "change_pct": quote.get("change_pct"),
+                "data_source": "angel_one",
+                "quote_timestamp": quote.get("exchange_timestamp") or quote.get("timestamp"),
+                **quote_status(quote),
+            }
+
         df, used_symbol, ticker = fetch_stock_data(symbol, period="5d", interval="1d")
         df = add_technical_indicators(df)
         latest = df.iloc[-1]

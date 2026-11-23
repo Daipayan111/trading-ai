@@ -66,7 +66,7 @@ MCX_COMMODITIES = {
         "name":          "Gold",
         "exchange":      "MCX",
         "lot_size":      1,
-        "unit":          "100g",
+        "unit":          "10g",
         "emoji":         "🪙",
         "color":         "#EAB308",
         "token":         "495213",
@@ -169,7 +169,7 @@ def _load_or_fetch_mcx_scrips() -> List[Dict[str, Any]]:
     os.makedirs(CACHE_DIR, exist_ok=True)
 
     # Use local cached file immediately for instant sub-millisecond response
-    if os.path.exists(SCRIP_MASTER_FILE):
+    if os.path.exists(SCRIP_MASTER_FILE) and time.time() - os.path.getmtime(SCRIP_MASTER_FILE) < 6 * 60 * 60:
         try:
             with open(SCRIP_MASTER_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -202,11 +202,14 @@ def _load_or_fetch_mcx_scrips() -> List[Dict[str, Any]]:
 def _discover_mcx_tokens() -> None:
     """Updates nearest active contract tokens using ScripMaster data."""
     global _last_discovery_time
+    # The poller runs continuously; do not reload the full instrument master every cycle.
+    if time.time() - _last_discovery_time < 6 * 60 * 60:
+        return
     mcx = _load_or_fetch_mcx_scrips()
     if not mcx:
         return
 
-    today = datetime.date.today()
+    today = datetime.datetime.now(IST).date()
     for sym, meta in MCX_COMMODITIES.items():
         contracts = [d for d in mcx if d.get("name") == sym]
         valid = []
@@ -250,8 +253,10 @@ def _fetch_prices_via_angel() -> bool:
         success_count = 0
 
         # Try batch getMarketData first (fastest)
-        tokens = [meta["token"] for meta in MCX_COMMODITIES.values() if meta.get("token")]
-        token_to_sym = {meta["token"]: sym for sym, meta in MCX_COMMODITIES.items() if meta.get("token")}
+        token_to_sym = {str(meta["token"]): sym for sym, meta in MCX_COMMODITIES.items() if meta.get("token")}
+        # A duplicate token makes the response map to the wrong contract. Query each token once,
+        # and leave duplicate-symbol resolution to the individual quote fallback below.
+        tokens = list(token_to_sym)
 
         try:
             resp = api.getMarketData("FULL", {"MCX": tokens})
@@ -286,6 +291,7 @@ def _fetch_prices_via_angel() -> bool:
                                 "change_pct": change_pct,
                                 "volume":     vol,
                                 "timestamp":  datetime.datetime.now(IST).isoformat(),
+                                "exchange_timestamp": item.get("exchFeedTime") or item.get("exchangeFeedTime"),
                                 "source":     "angel_live",
                             }
                         success_count += 1
@@ -323,6 +329,7 @@ def _fetch_prices_via_angel() -> bool:
                                 "change_pct": change_pct,
                                 "volume":     0,
                                 "timestamp":  datetime.datetime.now(IST).isoformat(),
+                                "exchange_timestamp": d.get("exchFeedTime") or d.get("exchangeFeedTime") or d.get("ltpTime"),
                                 "source":     "angel_live",
                             }
                         success_count += 1
@@ -335,48 +342,49 @@ def _fetch_prices_via_angel() -> bool:
         return False
 
 
-def _populate_baselines_if_empty() -> None:
-    """Pre-populates accurate real-market closing baselines if API is offline/closed."""
-    with _cache_lock:
-        for sym, meta in MCX_COMMODITIES.items():
-            if sym not in _commodity_cache:
-                base = meta["baseline_ltp"]
-                _commodity_cache[sym] = {
-                    "symbol":     sym,
-                    "name":       meta["name"],
-                    "ltp":        base,
-                    "open":       round(base * 0.998, 2),
-                    "high":       round(base * 1.004, 2),
-                    "low":        round(base * 0.995, 2),
-                    "close":      base,
-                    "prev_close": round(base * 0.996, 2),
-                    "change":     round(base * 0.004, 2),
-                    "change_pct": 0.40,
-                    "volume":     15240,
-                    "timestamp":  datetime.datetime.now(IST).isoformat(),
-                    "source":     "mcx_baseline",
-                }
-
-
 def refresh_commodity_prices() -> None:
-    """Refreshes commodity prices from Angel One, falls back to real baseline."""
+    """Refresh real MCX quotes. Never substitute a made-up baseline for an exchange quote."""
     _discover_mcx_tokens()
-    angel_ok = _fetch_prices_via_angel()
-    if not angel_ok:
-        _populate_baselines_if_empty()
+    if not _fetch_prices_via_angel():
+        logger.warning("[Commodity] No authenticated Angel One MCX quote; prices remain unavailable.")
 
 
 def get_commodity_prices() -> Dict[str, Dict[str, Any]]:
-    """Return current cached prices instantly (< 1ms), refreshing in background if needed."""
+    """Return only prices received from the authenticated exchange feed."""
     with _cache_lock:
-        if not _commodity_cache:
-            _populate_baselines_if_empty()
         return dict(_commodity_cache)
 
 
 def get_commodity_price(symbol: str) -> Optional[Dict[str, Any]]:
     prices = get_commodity_prices()
     return prices.get(symbol.upper())
+
+
+def quote_status(price_data: Optional[Dict[str, Any]], now: Optional[datetime.datetime] = None) -> Dict[str, Any]:
+    """Describe whether a cached broker quote is current, closed-session, stale, or absent."""
+    now = now or datetime.datetime.now(IST)
+    if not price_data or price_data.get("source") != "angel_live":
+        return {"is_live": False, "quote_status": "UNAVAILABLE", "quote_age_seconds": None}
+
+    try:
+        quoted_at = datetime.datetime.fromisoformat(str(price_data["timestamp"]))
+        if quoted_at.tzinfo is None:
+            quoted_at = IST.localize(quoted_at)
+        age = max(0, int((now - quoted_at.astimezone(IST)).total_seconds()))
+    except (KeyError, TypeError, ValueError):
+        age = None
+
+    if not is_mcx_market_open():
+        status = "LAST_QUOTE"
+    elif age is None or age > 45:
+        status = "STALE"
+    else:
+        status = "LIVE"
+    return {
+        "is_live": status == "LIVE",
+        "quote_status": status,
+        "quote_age_seconds": age,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -395,13 +403,12 @@ def start_commodity_poller(interval_seconds: int = 10) -> None:
 
     def _poll():
         time.sleep(2)
-        refresh_commodity_prices()
         while _polling_active:
             try:
                 refresh_commodity_prices()
             except Exception as e:
                 logger.error(f"[Commodity Poller] Error: {e}")
-            time.sleep(interval_seconds)
+            time.sleep(max(15, interval_seconds))
 
     _polling_thread = threading.Thread(target=_poll, daemon=True)
     _polling_thread.start()
@@ -454,7 +461,16 @@ def compute_commodity_signal(symbol: str) -> Dict[str, Any]:
         return {"error": f"Unknown commodity: {symbol}"}
 
     price_data = get_commodity_price(sym)
-    ltp = float(price_data["ltp"] if price_data else meta["baseline_ltp"])
+    if not price_data or price_data.get("source") != "angel_live":
+        return {
+            "symbol": sym,
+            "name": meta["name"],
+            "signal": "WAIT",
+            "direction": "HOLD",
+            "error": "Authenticated MCX quote unavailable; signal generation is paused.",
+            "data_source": "unavailable",
+        }
+    ltp = float(price_data["ltp"])
 
     # Fused LTP Calculator (CoA 1.0, EOS, EOR, Support/Resistance & Trap Shield)
     try:
